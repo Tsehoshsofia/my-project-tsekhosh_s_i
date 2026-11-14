@@ -98,7 +98,7 @@ tw-story[tags~="sit10"] { background-image: url("бокс.jpeg") !important; }
 
 tw-story[tags~="sit11"] { background-image: url("iphone.jpeg") !important; }
 tw-story[tags~="sit12"] { background-image: url("фото наушники.jpeg") !important; }
-tw-story[tags~="sit13"] { background-image: url("слабый_пароль.jpeg") !important; }
+tw-story[tags~="sit13"] { background-image: url("пароль_вред.jpeg") !important; }
 tw-story[tags~="sit14"] { background-image: url("удаление_товара.jpeg") !important; }
 tw-story[tags~="sit15"] { background-image: url("расписание.jpeg") !important; }
 tw-story[tags~="sit16"] { background-image: url("каталог.jpeg") !important; }
@@ -1333,7 +1333,14 @@ query = 'iphone'
 <h2>Почему в Python первый элемент имеет индекс 0, а для клиента первый товар — номер 1?</h2>
 В Python нумерация элементов начинается с нуля: <code>products[0]</code> — первый элемент. Пользователь же привык считать с единицы. Поэтому нужно использовать <code>products[choice - 1]</code>. Также необходимо проверять диапазон, иначе 0, отрицательное число или слишком большой номер вызовут <code>IndexError</code>.<br><br>
 <b>Как исправить в коде:</b><br><br>
-<code>products = ['Ноутбук', 'Смартфон', 'Наушники']<br>choice = int(input('Выберите номер товара: '))<br>if 1 &lt;= choice &lt;= len(products):<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Вы выбрали:', products[choice - 1])<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Такого товара нет')</code><br><br>
+<code>```
+products = ['Ноутбук', 'Смартфон', 'Наушники']
+choice = int(input('Выберите номер товара: '))
+if 1 &lt;= choice &lt;= len(products):
+    print('Вы выбрали:', products[choice - 1])
+else:
+    print('Такого товара нет')
+```<br><br></code><br><br>
 <b>Что ещё стоит сделать в реальном приложении:</b> показывать пользователю номера, начиная с 1, а внутри кода всегда вычитать 1. Проверять, что ввод — это число (через <code>try/except ValueError</code>).<br><br>
 <b>Последствие для бизнеса:</b> клиент получает не тот товар, оформляет неправильный заказ, обращается в поддержку, требует возврат. Компания теряет деньги, время сотрудников и репутацию.<br><br>
 [[Следующая ситуация->Списки: Ситуация 13]]
