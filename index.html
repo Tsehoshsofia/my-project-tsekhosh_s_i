@@ -1190,12 +1190,13 @@ tw-passage[tags~="l1"] tw-link:hover {
 Клиент вводит в поиске <b>iphone</b>. В каталоге товар записан как <b>IPhone</b>. Приложение отвечает: «Товар не найден». Клиент решает, что товара нет, уходит в другой магазин и оформляет заказ там.<br><br>
 <code>products = ['IPhone', 'Samsung Galaxy', 'Xiaomi']&lt;br&gt;
 query = 'iphone'&lt;br&gt;
-normalized_products = [p.lower().strip() for p in products]&lt;br&gt;
+normalized&#95;products = [p.lower().strip() for p in products]&lt;br&gt;
 &lt;br&gt;
-if query.strip().lower() in normalized_products:&lt;br&gt;
+if query.strip().lower() in normalized&#95;products:&lt;br&gt;
     print('Товар доступен')</code><br><br>
 [[Перейти к вопросу->Списки: Задание 11]]
 </tw-passagedata>
+    
 <tw-passagedata pid="261" name="Списки: Задание 11" tags="l2" position="1000,5100" size="100,100">
 Что выведет программа?<br><br>
 
@@ -1209,8 +1210,8 @@ if query.strip().lower() in normalized_products:&lt;br&gt;
 <span class="success-word">Верно</span><br><br>
 Оператор <code>in</code> сравнивает строки <b>точно</b>. Для Python <code>'iphone'</code> и <code>'IPhone'</code> — разные значения, поэтому условие ложно и выполняется ветка <code>else</code>.<br><br>
 <b>Как исправить:</b> нормализовать данные — убрать пробелы через <code>strip()</code> и привести к нижнему регистру через <code>lower()</code>.<br><br>
-<code>normalized_products = [p.lower().strip() for p in products]&lt;br&gt;
-if query.strip().lower() in normalized_products:&lt;br&gt;
+<code>normalized&#95;products = [p.lower().strip() for p in products]&lt;br&gt;
+if query.strip().lower() in normalized&#95;products:&lt;br&gt;
     print('Товар доступен')</code><br><br>
 [[Разобрать ситуацию глубже->Списки: Разбор 11]]
 </tw-passagedata>
@@ -1267,10 +1268,10 @@ if query.strip().lower() in normalized_products:&lt;br&gt;
 query = 'iphone'&lt;br&gt;
 &lt;br&gt;
 # 1. Нормализуем список товаров: приводим все названия к нижнему регистру и убираем пробелы&lt;br&gt;
-normalized_products = [p.lower().strip() for p in products]&lt;br&gt;
+normalized&#95;products = [p.lower().strip() for p in products]&lt;br&gt;
 &lt;br&gt;
 # 2. Нормализуем запрос клиента точно так же и проверяем наличие&lt;br&gt;
-if query.strip().lower() in normalized_products:&lt;br&gt;
+if query.strip().lower() in normalized&#95;products:&lt;br&gt;
     print('Товар доступен')&lt;br&gt;
 else:&lt;br&gt;
     print('Товар не найден')</code><br><br>
