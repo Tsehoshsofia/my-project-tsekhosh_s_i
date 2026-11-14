@@ -715,6 +715,990 @@ tw-passage[tags~="l1"] tw-link:hover {
 <tw-passagedata pid="1" name="Пользователь" tags="l1" position="800,100" size="100,100">(set: $history to (a:), $correct to 0, $wrong to 0, $perfect to true, $attemptHistory to (a:), $resetFlag to true, $attempts to 0)<div class="cloud-text">Здравствуйте. Меня зовут София Ивановна, я преподаватель дисциплины "Основы программирования". В приложении доставки произошли сбои: клиенты не находят товары, получают не те заказы и теряют корзины. Ваша задача - найти ошибки в коде и исправить их</div>
 [[Списки->Списки: Начало]]</tw-passagedata>
 
+<tw-passagedata pid="200" name="Списки: Начало" tags="l3" position="800,3000" size="100,100">
+<h2>Инциденты в приложении</h2>
+
+За одну ночь в приложение поступили жалобы: клиенты не находят товары, получают не те заказы, теряют корзины, не могут отменить записи, а служба безопасности обнаружила слабые пароли.<br><br>
+
+Вы — команда техподдержки и разработчиков приложения доставки. Ваша задача — найти ошибку в коде, исправить её и объяснить, как не допустить повторения.<br><br>
+
+[[Начать расследование->Списки: Ситуация 1]]
+</tw-passagedata>
+
+<tw-passagedata pid="201" name="Списки: Ситуация 1" tags="l3 sit sit1" position="900,3100" size="100,100">
+<h2>Ситуация 1. Покупка автомобиля</h2>
+Мы решили приобрести новый автомобиль. В гараже уже имеются следующие автомобили. Мы приобрели автомобиль <b>'Aurus Senat'</b> и хотим добавить его в конец списка.<br><br>
+<code>garage = ['Lada Granta', 'Niva Travel', 'Lada Vesta', 'УАЗ Патриот']</code><br><br>
+[[Перейти к вопросу->Списки: Задание 1]]
+</tw-passagedata>
+
+<tw-passagedata pid="202" name="Списки: Задание 1" tags="l2" position="1000,3100" size="100,100">
+Какой метод следует использовать для добавления <b>'Aurus Senat'</b> в конец списка <code>garage</code>?<br><br>
+
+[[garage.add('Aurus Senat')->Списки: Ошибка 1А]]
+[[garage.append('Aurus Senat')->Списки: Ответ 1Б]]
+[[garage.insert('Aurus Senat')->Списки: Ошибка 1В]]
+</tw-passagedata>
+
+<tw-passagedata pid="203" name="Списки: Ошибка 1А" tags="l4" position="1100,3200" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 1А->Списки: Пояснение 1А]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="301" name="Списки: Пояснение 1А" tags="l15" position="300,3200" size="100,100">
+У списков Python отсутствует метод <code>add()</code>.<br><br>
+<b>Рекомендация:</b> для добавления элемента в конец списка используется метод <code>append()</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="204" name="Списки: Ответ 1Б" tags="l3" position="1200,3200" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Метод <code>append()</code> добавляет элемент в конец списка.<br><br>
+После выполнения операции список будет иметь вид:<br><br>
+`&#91;'Lada Granta', 'Niva Travel', 'Lada Vesta', 'УАЗ Патриот', 'Aurus Senat'&#93;`<br><br>
+[[Следующая ситуация->Списки: Ситуация 2]]
+</tw-passagedata>
+
+<tw-passagedata pid="205" name="Списки: Ошибка 1В" tags="l4" position="1300,3200" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 1В->Списки: Пояснение 1В]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="302" name="Списки: Пояснение 1В" tags="l15" position="400,3200" size="100,100">
+Метод <code>insert()</code> требует указания двух аргументов: индекса и значения.<br><br>
+<b>Рекомендация:</b> для добавления элемента в конец списка используется метод <code>append()</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="206" name="Списки: Ситуация 2" tags="l3 sit sit2" position="900,3300" size="100,100">
+<h2>Ситуация 2. Отмена заказа</h2>
+В личном кабинете автосалона отображается список оформленных автомобилей. Мы решили отменить заказ на автомобиль <b>'УАЗ Патриот'</b>, который находится под индексом 1.<br><br>
+<code>myCars = ['Lada Vesta', 'УАЗ Патриот', 'Aurus Senat']</code><br><br>
+[[Перейти к вопросу->Списки: Задание 2]]
+</tw-passagedata>
+
+<tw-passagedata pid="207" name="Списки: Задание 2" tags="l2" position="1000,3300" size="100,100">
+Каким способом можно удалить данный элемент, зная его точное значение?<br><br>
+
+(link-goto: "del myCars[1]", "Списки: Ответ 2А")
+(link-goto: "myCars.remove('УАЗ Патриот')", "Списки: Ответ 2Б")
+(link-goto: "myCars.clear()", "Списки: Ошибка 2В")
+</tw-passagedata>
+
+<tw-passagedata pid="208" name="Списки: Ответ 2А" tags="l3" position="1100,3400" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Оператор <code>del</code> удаляет элемент по указанному индексу.<br><br>
+После выполнения операции список будет иметь вид:<br><br>
+`&#91;'Lada Vesta', 'Aurus Senat'&#93;`<br><br>
+[[Следующая ситуация->Списки: Ситуация 3]]
+</tw-passagedata>
+
+<tw-passagedata pid="209" name="Списки: Ответ 2Б" tags="l3" position="1200,3400" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Метод <code>remove()</code> удаляет первый элемент, значение которого совпадает с указанным.<br><br>
+После выполнения операции список будет иметь вид:<br><br>
+`&#91;'Lada Vesta', 'Aurus Senat'&#93;`<br><br>
+[[Следующая ситуация->Списки: Ситуация 3]]
+</tw-passagedata>
+
+<tw-passagedata pid="210" name="Списки: Ошибка 2В" tags="l4" position="1300,3400" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 2В->Списки: Пояснение 2В]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="303" name="Списки: Пояснение 2В" tags="l15" position="500,3400" size="100,100">
+Метод <code>clear()</code> удаляет все элементы списка.<br><br>
+<b>Рекомендация:</b> для удаления одного элемента используется <code>remove()</code> по значению либо <code>del</code> по индексу.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="211" name="Списки: Ситуация 3" tags="l3 sit sit3" position="900,3500" size="100,100">
+<h2>Ситуация 3. VIP-клиент салона красоты</h2>
+Мы являемся администраторами салона красоты. Клиентка Елена обратилась без предварительной записи, однако является VIP-клиентом. Необходимо добавить её на третью позицию, то есть на индекс 2.<br><br>
+<code>appointments = ['Анна', 'Петр', 'Мария', 'Олег']</code><br><br>
+[[Перейти к вопросу->Списки: Задание 3]]
+</tw-passagedata>
+
+<tw-passagedata pid="212" name="Списки: Задание 3" tags="l2" position="1000,3500" size="100,100">
+Какой код следует использовать для вставки <b>'Елена'</b> на индекс 2?<br><br>
+
+[[appointments.append('Елена')->Списки: Ошибка 3А]]
+[[appointments.insert(2, 'Елена')->Списки: Ответ 3Б]]
+(link-goto: "appointments[2] = 'Елена'", "Списки: Ошибка 3В")
+</tw-passagedata>
+
+<tw-passagedata pid="213" name="Списки: Ошибка 3А" tags="l4" position="1100,3600" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 3А->Списки: Пояснение 3А]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="304" name="Списки: Пояснение 3А" tags="l15" position="600,3600" size="100,100">
+Метод <code>append()</code> добавляет элемент в конец списка.<br><br>
+<b>Рекомендация:</b> для вставки элемента на определённую позицию используется метод <code>insert(индекс, значение)</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="214" name="Списки: Ответ 3Б" tags="l3" position="1200,3600" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Метод <code>insert(2, 'Елена')</code> вставляет элемент на индекс 2, при этом остальные элементы сдвигаются вправо.<br><br>
+После выполнения операции список будет иметь вид:<br><br>
+`&#91;'Анна', 'Петр', 'Елена', 'Мария', 'Олег'&#93;`<br><br>
+[[Следующая ситуация->Списки: Ситуация 4]]
+</tw-passagedata>
+
+<tw-passagedata pid="215" name="Списки: Ошибка 3В" tags="l4" position="1300,3600" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 3В->Списки: Пояснение 3В]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="305" name="Списки: Пояснение 3В" tags="l15" position="700,3600" size="100,100">
+Данная запись не вставляет новый элемент, а заменяет элемент, находящийся на индексе 2.<br><br>
+<b>Рекомендация:</b> для вставки элемента используется метод <code>insert()</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="216" name="Списки: Ситуация 4" tags="l3 sit" position="900,3700" size="100,100">
+<h2>Ситуация 4. Проверка базы клиентов</h2>
+Перед звонком клиенту необходимо убедиться, что клиент с именем <b>'Павел'</b> присутствует в базе.<br><br>
+<code>clients = ['Павел', 'Петр', 'Анна']</code><br><br>
+[[Перейти к вопросу->Списки: Задание 4]]
+</tw-passagedata>
+
+<tw-passagedata pid="217" name="Списки: Задание 4" tags="l2" position="1000,3700" size="100,100">
+Каким образом корректно проверить наличие элемента в списке?<br><br>
+
+[[if 'Павел' == clients:->Списки: Ошибка 4А]]
+[[if 'Павел' in clients:->Списки: Ответ 4Б]]
+[[if clients.find('Павел'):->Списки: Ошибка 4В]]
+</tw-passagedata>
+
+<tw-passagedata pid="218" name="Списки: Ошибка 4А" tags="l4" position="1100,3800" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 4А->Списки: Пояснение 4А]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="306" name="Списки: Пояснение 4А" tags="l15" position="800,3800" size="100,100">
+Оператор <code>==</code> сравнивает строку со всем списком, а не проверяет наличие элемента внутри списка.<br><br>
+<b>Рекомендация:</b> для проверки вхождения элемента используется оператор <code>in</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="219" name="Списки: Ответ 4Б" tags="l3" position="1200,3800" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Оператор <code>in</code> проверяет, содержится ли указанный элемент в списке.<br><br>
+Выражение <code>'Павел' in clients</code> возвращает <code>True</code>.<br><br>
+[[Следующая ситуация->Списки: Ситуация 5]]
+</tw-passagedata>
+
+<tw-passagedata pid="220" name="Списки: Ошибка 4В" tags="l4" position="1300,3800" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 4В->Списки: Пояснение 4В]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="307" name="Списки: Пояснение 4В" tags="l15" position="900,3800" size="100,100">
+У списков отсутствует метод <code>find()</code>. Данный метод применяется к строкам.<br><br>
+<b>Рекомендация:</b> для проверки вхождения элемента используется оператор <code>in</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="221" name="Списки: Ситуация 5" tags="l3 sit sit5" position="900,3900" size="100,100">
+<h2>Ситуация 5. Проверка наличия товара на складе</h2>
+Мы хотим заказать товар на Ozon. Перед добавлением товара в корзину необходимо убедиться, что он имеется в наличии.<br><br>
+<code>stock = ['Смартфон', 'Наушники', 'Пылесос', 'Чехол']</code><br><br>
+[[Перейти к вопросу->Списки: Задание 5]]
+</tw-passagedata>
+
+<tw-passagedata pid="222" name="Списки: Задание 5" tags="l2" position="1000,3900" size="100,100">
+Как проверить, что <b>'Пылесос'</b> содержится в списке товаров?<br><br>
+
+[[if 'Пылесос' == stock:->Списки: Ошибка 5А]]
+[[if 'Пылесос' in stock:->Списки: Ответ 5Б]]
+[[if stock.find('Пылесос'):->Списки: Ошибка 5В]]
+</tw-passagedata>
+
+<tw-passagedata pid="223" name="Списки: Ошибка 5А" tags="l4" position="1100,4000" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 5А->Списки: Пояснение 5А]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="308" name="Списки: Пояснение 5А" tags="l15" position="1000,4000" size="100,100">
+Оператор <code>==</code> сравнивает строку со всем списком, а не осуществляет поиск элемента внутри списка.<br><br>
+<b>Рекомендация:</b> для проверки вхождения элемента используется оператор <code>in</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="224" name="Списки: Ответ 5Б" tags="l3" position="1200,4000" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Оператор <code>in</code> проверяет наличие элемента в списке.<br><br>
+Выражение <code>'Пылесос' in stock</code> возвращает <code>True</code>, следовательно, товар можно добавить в корзину.<br><br>
+[[Следующая ситуация->Списки: Ситуация 6]]
+</tw-passagedata>
+
+<tw-passagedata pid="225" name="Списки: Ошибка 5В" tags="l4" position="1300,4000" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 5В->Списки: Пояснение 5В]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="309" name="Списки: Пояснение 5В" tags="l15" position="1100,4000" size="100,100">
+Метод <code>find()</code> применяется к строкам, но не к спискам.<br><br>
+<b>Рекомендация:</b> для проверки наличия элемента используется оператор <code>in</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="226" name="Списки: Ситуация 6" tags="l3 sit sit6" position="900,4100" size="100,100">
+<h2>Ситуация 6. Добавление товара в корзину</h2>
+В корзину уже добавлены следующие товары. Мы нашли книгу и хотим добавить её в конец корзины.<br><br>
+<code>cart = ['Смартфон', 'Наушники', 'Чехол']</code><br><br>
+[[Перейти к вопросу->Списки: Задание 6]]
+</tw-passagedata>
+
+<tw-passagedata pid="227" name="Списки: Задание 6" tags="l2" position="1000,4100" size="100,100">
+Какой код следует написать для добавления <b>'Книга'</b> в конец списка?<br><br>
+
+[[cart.insert('Книга')->Списки: Ошибка 6А]]
+[[cart.append('Книга')->Списки: Ответ 6Б]]
+[[cart.add('Книга')->Списки: Ошибка 6В]]
+</tw-passagedata>
+
+<tw-passagedata pid="228" name="Списки: Ошибка 6А" tags="l4" position="1100,4200" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 6А->Списки: Пояснение 6А]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="310" name="Списки: Пояснение 6А" tags="l15" position="1200,4200" size="100,100">
+Метод <code>insert()</code> требует указания двух аргументов: индекса и значения.<br><br>
+<b>Рекомендация:</b> для добавления элемента в конец списка используется метод <code>append()</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="229" name="Списки: Ответ 6Б" tags="l3" position="1200,4200" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Метод <code>append()</code> добавляет элемент в конец списка.<br><br>
+После выполнения операции список будет иметь вид:<br><br>
+`&#91;'Смартфон', 'Наушники', 'Чехол', 'Книга'&#93;`<br><br>
+[[Следующая ситуация->Списки: Ситуация 7]]
+</tw-passagedata>
+
+<tw-passagedata pid="230" name="Списки: Ошибка 6В" tags="l4" position="1300,4200" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 6В->Списки: Пояснение 6В]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="311" name="Списки: Пояснение 6В" tags="l15" position="1300,4200" size="100,100">
+У списков Python отсутствует метод <code>add()</code>.<br><br>
+<b>Рекомендация:</b> для добавления элемента в конец списка используется метод <code>append()</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="231" name="Списки: Ситуация 7" tags="l3 sit sit7" position="900,4300" size="100,100">
+<h2>Ситуация 7. Удаление товара из корзины</h2>
+Мы передумали приобретать наушники. Данный товар находится под индексом 1.<br><br>
+<code>cart = ['Смартфон', 'Наушники', 'Чехол', 'Книга']</code><br><br>
+[[Перейти к вопросу->Списки: Задание 7]]
+</tw-passagedata>
+
+<tw-passagedata pid="232" name="Списки: Задание 7" tags="l2" position="1000,4300" size="100,100">
+Как удалить элемент по его индексу?<br><br>
+
+(link-goto: "del cart[1]", "Списки: Ответ 7А")
+[[cart.remove(1)->Списки: Ошибка 7Б]]
+[[cart.pop()->Списки: Ошибка 7В]]
+</tw-passagedata>
+
+<tw-passagedata pid="233" name="Списки: Ответ 7А" tags="l3" position="1100,4400" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Оператор <code>del</code> удаляет элемент по указанному индексу.<br><br>
+После выполнения операции список будет иметь вид:<br><br>
+`&#91;'Смартфон', 'Чехол', 'Книга'&#93;`<br><br>
+[[Следующая ситуация->Списки: Ситуация 8]]
+</tw-passagedata>
+
+<tw-passagedata pid="234" name="Списки: Ошибка 7Б" tags="l4" position="1200,4400" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 7Б->Списки: Пояснение 7Б]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="312" name="Списки: Пояснение 7Б" tags="l15" position="1200,4400" size="100,100">
+Метод <code>remove()</code> осуществляет поиск элемента по значению, а не по индексу.<br><br>
+<b>Рекомендация:</b> для удаления элемента по индексу используется <code>del cart[1]</code> или <code>cart.pop(1)</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="235" name="Списки: Ошибка 7В" tags="l4" position="1300,4400" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 7В->Списки: Пояснение 7В]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="313" name="Списки: Пояснение 7В" tags="l15" position="1300,4400" size="100,100">
+Метод <code>pop()</code> без аргумента удаляет последний элемент списка.<br><br>
+<b>Рекомендация:</b> для удаления элемента по индексу используется <code>del cart[1]</code> или <code>cart.pop(1)</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="236" name="Списки: Ситуация 8" tags="l3 sit sit_remove" position="900,4500" size="100,100">
+<h2>Ситуация 8. Удаление товара</h2>
+Мы решили удалить товар из корзины, но сохранить саму переменную <code>cart</code> для дальнейшей работы.<br><br>
+<code>cart = ['Смартфон', 'Чехол', 'Книга']</code><br><br>
+[[Перейти к вопросу->Списки: Задание 8]]
+</tw-passagedata>
+
+<tw-passagedata pid="237" name="Списки: Задание 8" tags="l2" position="1000,4500" size="100,100">
+Какой метод следует использовать?<br><br>
+
+[[cart.clear()->Списки: Ответ 8А]]
+[[del cart->Списки: Ошибка 8Б]]
+(link-goto: "cart.removeAll()", "Списки: Ошибка 8В")
+</tw-passagedata>
+
+<tw-passagedata pid="238" name="Списки: Ответ 8А" tags="l3" position="1100,4600" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Метод <code>clear()</code> удаляет все элементы списка, при этом сама переменная сохраняется как пустой список:<br><br>
+`&#91;&#93;`<br><br>
+[[Следующая ситуация->Списки: Ситуация 9]]
+</tw-passagedata>
+
+<tw-passagedata pid="239" name="Списки: Ошибка 8Б" tags="l4" position="1200,4600" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 8Б->Списки: Пояснение 8Б]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="314" name="Списки: Пояснение 8Б" tags="l15" position="1400,4600" size="100,100">
+Оператор <code>del cart</code> удаляет саму переменную, после чего обращение к ней становится невозможным.<br><br>
+<b>Рекомендация:</b> для очистки списка используется метод <code>clear()</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="240" name="Списки: Ошибка 8В" tags="l4" position="1300,4600" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 8В->Списки: Пояснение 8В]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="315" name="Списки: Пояснение 8В" tags="l15" position="1500,4600" size="100,100">
+Метода <code>remove_all()</code> у списков Python не существует.<br><br>
+<b>Рекомендация:</b> для очистки списка используется метод <code>clear()</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="241" name="Списки: Ситуация 9" tags="l3 sit sit9" position="900,4700" size="100,100">
+<h2>Ситуация 9. Запись к врачу</h2>
+Мы записываемся к врачу. Необходимо добавить запись к хирургу на вторник, то есть на индекс 1.<br><br>
+<code>appointments = ['Терапевт (пн)', 'Стоматолог (ср)', 'Окулист (пт)']</code><br><br>
+[[Перейти к вопросу->Списки: Задание 9]]
+</tw-passagedata>
+
+<tw-passagedata pid="242" name="Списки: Задание 9" tags="l2" position="1000,4700" size="100,100">
+Какой код следует написать?<br><br>
+
+[[appointments.append('Хирург')->Списки: Ошибка 9А]]
+[[appointments.insert(1, 'Хирург')->Списки: Ответ 9Б]]
+(link-goto: "appointments[1] = 'Хирург'", "Списки: Ошибка 9В")
+</tw-passagedata>
+
+<tw-passagedata pid="243" name="Списки: Ошибка 9А" tags="l4" position="1100,4800" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 9А->Списки: Пояснение 9А]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="316" name="Списки: Пояснение 9А" tags="l15" position="1600,4800" size="100,100">
+Метод <code>append()</code> добавляет элемент в конец списка.<br><br>
+<b>Рекомендация:</b> для вставки элемента на определённую позицию используется метод <code>insert(индекс, значение)</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="244" name="Списки: Ответ 9Б" tags="l3" position="1200,4800" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Метод <code>insert(1, 'Хирург')</code> вставляет элемент на индекс 1, а остальные элементы сдвигаются вправо.<br><br>
+[[Следующая ситуация->Списки: Ситуация 10]]
+</tw-passagedata>
+
+<tw-passagedata pid="245" name="Списки: Ошибка 9В" tags="l4" position="1300,4800" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 9В->Списки: Пояснение 9В]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="317" name="Списки: Пояснение 9В" tags="l15" position="1700,4800" size="100,100">
+Данная запись заменяет существующий элемент, а не добавляет новый.<br><br>
+<b>Рекомендация:</b> для вставки элемента используется метод <code>insert()</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="246" name="Списки: Ситуация 10" tags="l3 sit sit10" position="900,4900" size="100,100">
+<h2>Ситуация 10. Перенос тренировки</h2>
+Мы записаны на тренировку по плаванию в среду, на индексе 1. Необходимо заменить эту тренировку на бокс, не добавляя новый элемент в список.<br><br>
+<code>schedule = ['Йога (пн)', 'Бассейн (ср)', 'Кроссфит (пт)']</code><br><br>
+[[Перейти к вопросу->Списки: Задание 10]]
+</tw-passagedata>
+
+<tw-passagedata pid="247" name="Списки: Задание 10" tags="l2" position="1000,4900" size="100,100">
+Какой код следует написать?<br><br>
+
+[[schedule.append('Бокс')->Списки: Ошибка 10А]]
+(link-goto: "schedule[1] = 'Бокс'", "Списки: Ответ 10Б")
+[[schedule.insert(1, 'Бокс')->Списки: Ошибка 10В]]
+</tw-passagedata>
+
+<tw-passagedata pid="248" name="Списки: Ошибка 10А" tags="l4" position="1100,5000" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 10А->Списки: Пояснение 10А]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="318" name="Списки: Пояснение 10А" tags="l15" position="1800,5000" size="100,100">
+Метод <code>append()</code> добавляет новый элемент в конец списка.<br><br>
+<b>Рекомендация:</b> для замены элемента используется обращение к нему по индексу.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="249" name="Списки: Ответ 10Б" tags="l3" position="1200,5000" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Списки в Python являются изменяемыми структурами данных.<br><br>
+Запись <code>schedule[1] = 'Бокс'</code> заменяет элемент <code>'Бассейн (ср)'</code> на <code>'Бокс'</code>.<br><br>
+[[Следующая ситуация->Списки: Ситуация 11]]
+</tw-passagedata>
+
+<tw-passagedata pid="250" name="Списки: Ошибка 10В" tags="l4" position="1300,5000" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 10В->Списки: Пояснение 10В]]
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="319" name="Списки: Пояснение 10В" tags="l15" position="1900,5000" size="100,100">
+Метод <code>insert()</code> вставляет элемент, но не заменяет существующий.<br><br>
+<b>Рекомендация:</b> для замены элемента используется обращение к нему по индексу.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="260" name="Списки: Ситуация 11" tags="l3 sit sit11" position="900,5100" size="100,100">
+<h2>Ситуация 11. Клиент ищет iPhone, а магазин его «не видит»</h2>
+Клиент вводит в поиске <b>iphone</b>. В каталоге товар записан как <b>IPhone</b>. Приложение отвечает: «Товар не найден». Клиент решает, что товара нет, уходит в другой магазин и оформляет заказ там.<br><br>
+<code>```products = ['IPhone', 'Samsung Galaxy', 'Xiaomi']
+query = 'iphone'
+`normalized_products = [p.lower().strip() for p in products]`<br>
+`if query.strip().lower() in normalized_products:`<br>
+`    print('Товар доступен')`<br><br>
+[[Перейти к вопросу->Списки: Задание 11]]
+</tw-passagedata>
+
+<tw-passagedata pid="261" name="Списки: Задание 11" tags="l2" position="1000,5100" size="100,100">
+Что выведет программа?<br><br>
+
+[[Товар доступен->Списки: Ошибка 11А]]
+[[Товар не найден->Списки: Ответ 11Б]]
+[[True->Списки: Ошибка 11В]]
+[[ValueError->Списки: Ошибка 11Г]]
+</tw-passagedata>
+
+<tw-passagedata pid="262" name="Списки: Ответ 11Б" tags="l3" position="1100,5200" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Оператор <code>in</code> сравнивает строки <b>точно</b>. Для Python <code>'iphone'</code> и <code>'IPhone'</code> — разные значения, поэтому условие ложно и выполняется ветка <code>else</code>.<br><br>
+<b>Как исправить:</b> нормализовать данные — убрать пробелы через <code>strip()</code> и привести к нижнему регистру через <code>lower()</code>.<br><br>
+<code>`normalized_products = [p.lower().strip() for p in products]`<br>
+`if query.strip().lower() in normalized_products:`<br>
+`    print('Товар доступен')`<br><br></code><br><br>
+[[Разобрать ситуацию глубже->Списки: Разбор 11]]
+</tw-passagedata>
+
+<tw-passagedata pid="263" name="Списки: Ошибка 11А" tags="l4" position="1200,5200" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 11А->Списки: Пояснение 11А]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="264" name="Списки: Пояснение 11А" tags="l15" position="300,5200" size="100,100">
+Оператор <code>in</code> чувствителен к регистру. Строка <code>'iphone'</code> не равна строке <code>'IPhone'</code>, поэтому условие ложно.<br><br>
+<b>Рекомендация:</b> перед сравнением приводите обе строки к одному регистру через <code>.lower()</code> и убирайте пробелы через <code>.strip()</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="265" name="Списки: Ошибка 11В" tags="l4" position="1300,5200" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 11В->Списки: Пояснение 11В]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="266" name="Списки: Пояснение 11В" tags="l15" position="400,5200" size="100,100">
+<code>True</code> — это логическое значение, а не текст, который выводит <code>print()</code>. В данной программе <code>print()</code> выводит только одну из двух строк: <code>'Товар доступен'</code> или <code>'Товар не найден'</code>.<br><br>
+<b>Рекомендация:</b> обратите внимание, что <code>if</code> проверяет условие, но не выводит его результат.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="267" name="Списки: Ошибка 11Г" tags="l4" position="1400,5200" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 11Г->Списки: Пояснение 11Г]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="268" name="Списки: Пояснение 11Г" tags="l15" position="500,5200" size="100,100">
+<code>ValueError</code> возникает при неверном преобразовании типов (например, <code>int('abc')</code>). В данной программе нет преобразования типов — только сравнение строк, поэтому ошибки не будет.<br><br>
+<b>Рекомендация:</b> <code>ValueError</code> — это исключение, а не результат работы <code>print()</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="269" name="Списки: Разбор 11" tags="l3" position="1000,5300" size="100,100">
+<h2>Почему клиент потерян, хотя товар физически есть?</h2>
+Оператор <code>in</code> сравнивает строки <b>точно</b>. Для Python <code>iphone</code>, <code>IPhone</code> и <code>IPHONE</code> — <b>разные значения</b>. Лишний пробел тоже меняет строку.<br><br>
+<b>Какие ещё варианты написания могут сломать поиск:</b><br>
+<ul>
+<li><code>IPHONE</code> — другой регистр;</li>
+<li><code>iphone </code> — лишний пробел в конце;</li>
+<li><code>I-Phone</code> — дефис;</li>
+<li><code>айфон</code> — транслитерация;</li>
+<li><code>iPhone 15</code> — модель с уточнением.</li>
+</ul>
+<b>Как исправить в коде:</b><br><br>
+<code>products = ['IPhone', 'Samsung Galaxy', 'Xiaomi']<br>query = 'iphone'<br>normalized_products = [product.lower().strip() for product in products]<br>if query.strip().lower() in normalized_products:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Товар доступен')<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Товар не найден')</code><br><br>
+<b>Что ещё стоит сделать в реальном магазине:</b> поиск по артикулу и ID товара, по синонимам, исправление опечаток (fuzzy search).<br><br>
+<b>Последствие для бизнеса:</b> клиент не находит нужный товар, уходит к конкуренту, магазин теряет продажу и доверие.<br><br>
+[[Следующая ситуация->Списки: Ситуация 12]]
+</tw-passagedata>
+
+<tw-passagedata pid="270" name="Списки: Ситуация 12" tags="l3 sit sit12" position="900,5400" size="100,100">
+<h2>Ситуация 12. Клиент выбрал первый товар, а получил второй</h2>
+В приложении товары показаны с номерами: 1 — Ноутбук, 2 — Смартфон, 3 — Наушники. Клиент выбирает 1, но получает смартфон. Он оформляет заказ, ждёт доставку, а затем обнаруживает ошибку. Поддержка тратит время, клиент теряет доверие, магазин несёт расходы на отмену и возврат.<br><br>
+<code>products = ['Ноутбук', 'Смартфон', 'Наушники']<br>choice = int(input('Выберите номер товара: '))<br>print('Вы выбрали:', products[choice])</code><br><br>
+[[Перейти к вопросу->Списки: Задание 12]]
+</tw-passagedata>
+
+<tw-passagedata pid="271" name="Списки: Задание 12" tags="l2" position="1000,5400" size="100,100">
+Какой товар получит клиент при вводе 1?<br><br>
+
+[[Ноутбук->Списки: Ошибка 12А]]
+[[Смартфон->Списки: Ответ 12Б]]
+[[Наушники->Списки: Ошибка 12В]]
+[[Возникнет ошибка->Списки: Ошибка 12Г]]
+</tw-passagedata>
+
+<tw-passagedata pid="272" name="Списки: Ответ 12Б" tags="l3" position="1100,5500" size="100,100">
+<span class="success-word">Верно</span><br><br>
+В Python нумерация элементов начинается с <b>нуля</b>: <code>products[0]</code> — первый элемент, <code>products[1]</code> — второй. Клиент ввёл 1, а программа обратилась к <code>products[1]</code> — это <b>Смартфон</b>.<br><br>
+<b>Как исправить:</b> использовать <code>products[choice - 1]</code> и проверять диапазон.<br><br>
+<code>if 1 &lt;= choice &lt;= len(products):<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Вы выбрали:', products[choice - 1])<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Такого товара нет')</code><br><br>
+[[Разобрать ситуацию глубже->Списки: Разбор 12]]
+</tw-passagedata>
+
+<tw-passagedata pid="273" name="Списки: Ошибка 12А" tags="l4" position="1200,5500" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 12А->Списки: Пояснение 12А]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="274" name="Списки: Пояснение 12А" tags="l15" position="300,5500" size="100,100">
+Клиент ввёл 1, но программа обратилась к <code>products[1]</code> — это <b>второй</b> элемент, а не первый. Первый элемент — <code>products[0]</code>.<br><br>
+<b>Рекомендация:</b> при работе с пользовательскими номерами вычитайте 1: <code>products[choice - 1]</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="275" name="Списки: Ошибка 12В" tags="l4" position="1300,5500" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 12В->Списки: Пояснение 12В]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="276" name="Списки: Пояснение 12В" tags="l15" position="400,5500" size="100,100">
+Наушники находятся на индексе 2. Программа при вводе 1 обращается к <code>products[1]</code> — это второй элемент, а не третий.<br><br>
+<b>Рекомендация:</b> помните, что индексы начинаются с 0: <code>products[0]</code> — первый, <code>products[1]</code> — второй, <code>products[2]</code> — третий.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="277" name="Списки: Ошибка 12Г" tags="l4" position="1400,5500" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 12Г->Списки: Пояснение 12Г]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="278" name="Списки: Пояснение 12Г" tags="l15" position="500,5500" size="100,100">
+Ошибка <code>IndexError</code> возникла бы при значении 3 или больше (индекс 3, 4...). При вводе 1 программа обращается к <code>products[1]</code> — это корректный индекс (второй элемент), поэтому ошибки нет.<br><br>
+<b>Рекомендация:</b> проверяйте диапазон <code>1 &lt;= choice &lt;= len(products)</code>, чтобы избежать <code>IndexError</code> при 0, отрицательных или слишком больших значениях.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="279" name="Списки: Разбор 12" tags="l3" position="1000,5600" size="100,100">
+<h2>Почему в Python первый элемент имеет индекс 0, а для клиента первый товар — номер 1?</h2>
+В Python нумерация элементов начинается с нуля: <code>products[0]</code> — первый элемент. Пользователь же привык считать с единицы. Поэтому нужно использовать <code>products[choice - 1]</code>. Также необходимо проверять диапазон, иначе 0, отрицательное число или слишком большой номер вызовут <code>IndexError</code>.<br><br>
+<b>Как исправить в коде:</b><br><br>
+<code>```
+products = ['Ноутбук', 'Смартфон', 'Наушники']
+choice = int(input('Выберите номер товара: '))
+if 1 &lt;= choice &lt;= len(products):
+    print('Вы выбрали:', products[choice - 1])
+else:
+    print('Такого товара нет')
+```<br><br></code><br><br>
+<b>Что ещё стоит сделать в реальном приложении:</b> показывать пользователю номера, начиная с 1, а внутри кода всегда вычитать 1. Проверять, что ввод — это число (через <code>try/except ValueError</code>).<br><br>
+<b>Последствие для бизнеса:</b> клиент получает не тот товар, оформляет неправильный заказ, обращается в поддержку, требует возврат. Компания теряет деньги, время сотрудников и репутацию.<br><br>
+[[Следующая ситуация->Списки: Ситуация 13]]
+</tw-passagedata>
+
+<tw-passagedata pid="280" name="Списки: Ситуация 13" tags="l3 sit sit13" position="900,5700" size="100,100">
+<h2>Ситуация 13. Слабый пароль открыл доступ к аккаунту</h2>
+Пользователь регистрируется с паролем <b>1</b>. Система принимает его, потому что разработчик проверил только, что поле не пустое. Злоумышленник легко подбирает пароль, входит в аккаунт, меняет адрес доставки и оформляет заказ за счёт клиента.<br><br>
+<code>password = input('Введите пароль: ')<br>if password:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Регистрация успешна')<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Введите пароль')</code><br><br>
+[[Перейти к вопросу->Списки: Задание 13]]
+</tw-passagedata>
+
+<tw-passagedata pid="281" name="Списки: Задание 13" tags="l2" position="1000,5700" size="100,100">
+Какой пароль пройдёт эту проверку?<br><br>
+
+[[Только пароль длиной 8 символов->Списки: Ошибка 13А]]
+[[Любой непустой пароль, включая 1->Списки: Ответ 13Б]]
+[[Только пароль с цифрой и буквой->Списки: Ошибка 13В]]
+[[Ни один пароль->Списки: Ошибка 13Г]]
+</tw-passagedata>
+
+<tw-passagedata pid="282" name="Списки: Ответ 13Б" tags="l3" position="1100,5800" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Проверка <code>if password:</code> подтверждает только, что пользователь что-то ввёл. Она <b>не защищает</b> аккаунт. Пароль <code>1</code> — непустая строка, поэтому регистрация пройдёт.<br><br>
+<b>Как исправить:</b> проверять длину, наличие букв и цифр.<br><br>
+<code>has_digit = any(symbol.isdigit() for symbol in password)<br>has_letter = any(symbol.isalpha() for symbol in password)<br>if len(password) &gt;= 8 and has_digit and has_letter:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Пароль принят')<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Пароль должен содержать минимум 8 символов, буквы и цифры')</code><br><br>
+[[Разобрать ситуацию глубже->Списки: Разбор 13]]
+</tw-passagedata>
+
+<tw-passagedata pid="283" name="Списки: Ошибка 13А" tags="l4" position="1200,5800" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 13А->Списки: Пояснение 13А]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="284" name="Списки: Пояснение 13А" tags="l15" position="300,5800" size="100,100">
+Проверка <code>if password:</code> не проверяет длину. Она только подтверждает, что строка не пустая. Пароль <code>1</code> имеет длину 1, но пройдёт проверку.<br><br>
+<b>Рекомендация:</b> добавьте проверку <code>len(password) &gt;= 8</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="285" name="Списки: Ошибка 13В" tags="l4" position="1300,5800" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 13В->Списки: Пояснение 13В]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="286" name="Списки: Пояснение 13В" tags="l15" position="400,5800" size="100,100">
+Проверка <code>if password:</code> не проверяет наличие цифр и букв. Она только подтверждает, что строка не пустая. Пароль <code>1</code> содержит только цифру, но пройдёт проверку.<br><br>
+<b>Рекомендация:</b> добавьте проверки <code>any(symbol.isdigit() ...)</code> и <code>any(symbol.isalpha() ...)</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="287" name="Списки: Ошибка 13Г" tags="l4" position="1400,5800" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 13Г->Списки: Пояснение 13Г]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="288" name="Списки: Пояснение 13Г" tags="l15" position="500,5800" size="100,100">
+Пароль <code>1</code> — непустая строка, поэтому <code>if password:</code> истинно, и регистрация пройдёт. Ошибка в том, что проверка слишком слабая.<br><br>
+<b>Рекомендация:</b> проверяйте длину, буквы и цифры. В реальной системе также нужны ограничение попыток входа и хранение хеша пароля, а не самого пароля.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="289" name="Списки: Разбор 13" tags="l3" position="1000,5900" size="100,100">
+<h2>Почему проверка «поле не пустое» не является проверкой безопасности?</h2>
+Проверка <code>if password:</code> подтверждает только, что пользователь что-то ввёл. Она не защищает аккаунт. Нужны минимальная длина, наличие букв и цифр, возможно специального символа, повторный ввод пароля, ограничение количества попыток входа и хранение не самого пароля, а его хеша. Пароль нельзя выводить на экран, сохранять в открытом виде или пересылать в чате.<br><br>
+<b>Как исправить в коде:</b><br><br>
+<code>password = input('Введите пароль: ')<br>has_digit = any(symbol.isdigit() for symbol in password)<br>has_letter = any(symbol.isalpha() for symbol in password)<br>if len(password) &gt;= 8 and has_digit and has_letter:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Пароль принят')<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Пароль должен содержать минимум 8 символов, буквы и цифры')</code><br><br>
+<b>Что ещё стоит сделать в реальном приложении:</b> хешировать пароль (например, через <code>bcrypt</code>), ограничивать число попыток входа, использовать двухфакторную аутентификацию.<br><br>
+<b>Последствие для бизнеса:</b> взлом аккаунта, финансовые потери клиента, жалобы, репутационный ущерб, возможные юридические и репутационные риски для компании.<br><br>
+[[Следующая ситуация->Списки: Ситуация 14]]
+</tw-passagedata>
+
+<tw-passagedata pid="290" name="Списки: Ситуация 14" tags="l3 sit sit14" position="900,6000" size="100,100">
+<h2>Ситуация 14. Клиент отменил один товар, а удалился другой</h2>
+В корзине лежат Наушники, Кабель, Наушники Pro. Клиент хочет удалить <b>Наушники Pro</b>, но разработчик написал <code>cart.remove('Наушники')</code>. Удаляются обычные наушники, а дорогая модель остаётся. Клиент оплачивает не тот заказ, затем требует возврат и пишет негативный отзыв.<br><br>
+<code>cart = ['Наушники', 'Кабель', 'Наушники Pro']<br>cart.remove('Наушники')<br>print(cart)</code><br><br>
+[[Перейти к вопросу->Списки: Задание 14]]
+</tw-passagedata>
+
+<tw-passagedata pid="291" name="Списки: Задание 14" tags="l2" position="1000,6000" size="100,100">
+Какой элемент удалится?<br><br>
+
+[[Наушники Pro->Списки: Ошибка 14А]]
+[[Наушники->Списки: Ответ 14Б]]
+[[Оба варианта с наушниками->Списки: Ошибка 14В]]
+[[Ничего не удалится->Списки: Ошибка 14Г]]
+</tw-passagedata>
+
+<tw-passagedata pid="292" name="Списки: Ответ 14Б" tags="l3" position="1100,6100" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Метод <code>remove()</code> удаляет <b>первый</b> элемент, значение которого совпадает с указанным. В данном случае удалятся обычные <b>Наушники</b>, а дорогая модель <b>Наушники Pro</b> останется.<br><br>
+<b>Как исправить:</b> использовать уникальный идентификатор (id), а не название.<br><br>
+<code>cart = [{'id': 1, 'name': 'Наушники'}, {'id': 2, 'name': 'Кабель'}, {'id': 3, 'name': 'Наушники Pro'}]<br>cart = [item for item in cart if item['id'] != 3]</code><br><br>
+[[Разобрать ситуацию глубже->Списки: Разбор 14]]
+</tw-passagedata>
+
+<tw-passagedata pid="293" name="Списки: Ошибка 14А" tags="l4" position="1200,6100" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 14А->Списки: Пояснение 14А]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="294" name="Списки: Пояснение 14А" tags="l15" position="300,6100" size="100,100">
+Метод <code>remove()</code> удаляет первое совпадение. Первый элемент — обычные <b>Наушники</b>, поэтому удалятся именно они, а не Pro-версия.<br><br>
+<b>Рекомендация:</b> для точного удаления используйте уникальный id товара.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="295" name="Списки: Ошибка 14В" tags="l4" position="1300,6100" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 14В->Списки: Пояснение 14В]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="296" name="Списки: Пояснение 14В" tags="l15" position="400,6100" size="100,100">
+<code>remove()</code> удаляет только <b>один</b> элемент — первый, который совпадает со значением. Второй элемент («Наушники Pro») останется в списке.<br><br>
+<b>Рекомендация:</b> чтобы удалить оба, нужно вызвать <code>remove()</code> дважды или использовать список с id.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="297" name="Списки: Ошибка 14Г" tags="l4" position="1400,6100" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 14Г->Списки: Пояснение 14Г]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="298" name="Списки: Пояснение 14Г" tags="l15" position="500,6100" size="100,100">
+Строка «Наушники» есть в корзине, поэтому <code>remove()</code> найдёт её и удалит. Если бы элемента не было, возникла бы ошибка <code>ValueError</code>.<br><br>
+<b>Рекомендация:</b> перед удалением проверяйте наличие элемента через <code>in</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="299" name="Списки: Разбор 14" tags="l3" position="1000,6200" size="100,100">
+<h2>Почему нельзя идентифицировать товар только по названию?</h2>
+<code>remove()</code> удаляет только первое точное совпадение. Если названия похожи (например, «Наушники» и «Наушники Pro»), можно удалить не тот товар. В реальной системе у каждого товара должен быть уникальный <b>id</b>. Перед удалением нужно проверить наличие элемента через <code>in</code>, а ещё лучше хранить корзину как список словарей с id, названием, ценой и количеством.<br><br>
+<b>Как исправить в коде:</b><br><br>
+<code>cart = ['Наушники', 'Кабель', 'Наушники Pro']<br>item = 'Наушники Pro'<br>if item in cart:<br>&nbsp;&nbsp;&nbsp;&nbsp;cart.remove(item)<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Товар удалён')<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Такого товара нет в корзине')</code><br><br>
+<b>Что ещё стоит сделать в реальном приложении:</b> хранить товары как словари <code>{'id': 3, 'name': 'Наушники Pro', 'price': 15000}</code> и удалять по id.<br><br>
+<b>Последствие для бизнеса:</b> неправильный заказ, возврат товара, недовольство клиента, негативный отзыв, дополнительные расходы на логистику и поддержку.<br><br>
+[[Следующая ситуация->Списки: Ситуация 15]]
+</tw-passagedata>
+
+<tw-passagedata pid="300" name="Списки: Ситуация 15" tags="l3 sit sit15" position="900,6300" size="100,100">
+<h2>Ситуация 15. Администратор очистил расписание вместо одной записи</h2>
+Администратор салона хочет отменить одну запись клиента, но случайно нажимает «Очистить расписание». Все записи на день исчезают. Клиенты приходят, а персонал не знает, кого ждать. Салон теряет деньги, доверие и получает жалобы.<br><br>
+<code>schedule = ['10:00 — Анна', '12:00 — Мария', '14:00 — Ольга']<br>schedule.clear()<br>print(schedule)</code><br><br>
+[[Перейти к вопросу->Списки: Задание 15]]
+</tw-passagedata>
+
+<tw-passagedata pid="301a" name="Списки: Задание 15" tags="l2" position="1000,6300" size="100,100">
+Что произойдёт после выполнения кода?<br><br>
+
+[[Удалится только первая запись->Списки: Ошибка 15А]]
+[[Удалится последняя запись->Списки: Ошибка 15Б]]
+[[Список станет пустым, но переменная сохранится->Списки: Ответ 15В]]
+[[Переменная schedule исчезнет->Списки: Ошибка 15Г]]
+</tw-passagedata>
+
+<tw-passagedata pid="302a" name="Списки: Ответ 15В" tags="l3" position="1100,6400" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Метод <code>clear()</code> очищает содержимое списка, но сама переменная <code>schedule</code> остаётся и становится пустым списком <code>[]</code>.<br><br>
+<b>Как исправить:</b> сохранить резервную копию и запрашивать подтверждение перед очисткой.<br><br>
+<code>backup = schedule.copy()<br># Только после подтверждения администратора:<br>schedule.clear()<br>print('Расписание очищено')<br>print('Резервная копия:', backup)</code><br><br>
+[[Разобрать ситуацию глубже->Списки: Разбор 15]]
+</tw-passagedata>
+
+<tw-passagedata pid="303a" name="Списки: Ошибка 15А" tags="l4" position="1200,6400" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 15А->Списки: Пояснение 15А]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="304a" name="Списки: Пояснение 15А" tags="l15" position="300,6400" size="100,100">
+<code>clear()</code> удаляет <b>все</b> элементы списка, а не только первый. Для удаления одного элемента используется <code>remove()</code> или <code>del</code> по индексу.<br><br>
+<b>Рекомендация:</b> перед очисткой сохраняйте резервную копию и запрашивайте подтверждение.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="305a" name="Списки: Ошибка 15Б" tags="l4" position="1300,6400" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 15Б->Списки: Пояснение 15Б]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="306a" name="Списки: Пояснение 15Б" tags="l15" position="400,6400" size="100,100">
+<code>clear()</code> удаляет <b>все</b> элементы списка. Для удаления последнего элемента используется <code>pop()</code> без аргумента.<br><br>
+<b>Рекомендация:</b> <code>clear()</code> — опасная операция, её нужно защищать подтверждением и резервной копией.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="307a" name="Списки: Ошибка 15Г" tags="l4" position="1400,6400" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 15Г->Списки: Пояснение 15Г]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="308a" name="Списки: Пояснение 15Г" tags="l15" position="500,6400" size="100,100">
+<code>clear()</code> очищает содержимое, но не удаляет саму переменную. Переменная <code>schedule</code> останется и будет равна <code>[]</code>. Чтобы удалить саму переменную, используется <code>del schedule</code>.<br><br>
+<b>Рекомендация:</b> различайте <code>clear()</code> (очистить) и <code>del</code> (удалить переменную).<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="309a" name="Списки: Разбор 15" tags="l3" position="1000,6500" size="100,100">
+<h2>Чем <code>clear()</code> отличается от <code>del schedule</code>?</h2>
+<code>clear()</code> очищает содержимое списка, но сама переменная остаётся. <code>del schedule</code> удаляет саму переменную. В реальной системе удаление должно требовать подтверждения, сохранять резервную копию, вести журнал действий и ограничивать права доступа. Нельзя позволять одному неверному нажатию уничтожить данные клиентов.<br><br>
+<b>Как исправить в коде:</b><br><br>
+<code>schedule = ['10:00 — Анна', '12:00 — Мария', '14:00 — Ольга']<br>backup = schedule.copy()<br># Только после подтверждения администратора:<br>schedule.clear()<br>print('Расписание очищено')<br>print('Резервная копия:', backup)</code><br><br>
+<b>Что ещё стоит сделать в реальном приложении:</b> запрашивать подтверждение («Вы уверены?»), вести журнал действий (кто и когда очистил), ограничивать права на очистку только администраторам, хранить резервные копии на сервере.<br><br>
+<b>Последствие для бизнеса:</b> потерянные записи, сорванные встречи, жалобы клиентов, потеря выручки и репутации салона.<br><br>
+[[Следующая ситуация->Списки: Ситуация 16]]
+</tw-passagedata>
+
+<tw-passagedata pid="310a" name="Списки: Ситуация 16" tags="l3 sit sit16" position="900,6600" size="100,100">
+<h2>Ситуация 16. Новинки оказались внизу, а старые товары — сверху</h2>
+Маркетолог хочет показать новинки в начале каталога. Разработчик использовал <code>reverse()</code> вместо сортировки по дате. Клиент видит устаревшие модели, думает, что магазин не обновляется, и уходит к конкуренту с более актуальным ассортиментом.<br><br>
+<code>products = [<br>&nbsp;&nbsp;&nbsp;&nbsp;'2023 — Монитор',<br>&nbsp;&nbsp;&nbsp;&nbsp;'2025 — Ноутбук',<br>&nbsp;&nbsp;&nbsp;&nbsp;'2021 — Мышь',<br>&nbsp;&nbsp;&nbsp;&nbsp;'2026 — Смартфон'<br>]<br>products.reverse()<br>print(products)</code><br><br>
+[[Перейти к вопросу->Списки: Задание 16]]
+</tw-passagedata>
+
+<tw-passagedata pid="311a" name="Списки: Задание 16" tags="l2" position="1000,6600" size="100,100">
+Какой товар окажется первым?<br><br>
+
+[[2026 — Смартфон->Списки: Ответ 16А]]
+[[2025 — Ноутбук->Списки: Ошибка 16Б]]
+[[2023 — Монитор->Списки: Ошибка 16В]]
+[[2021 — Мышь->Списки: Ошибка 16Г]]
+</tw-passagedata>
+
+<tw-passagedata pid="312a" name="Списки: Ответ 16А" tags="l3" position="1100,6700" size="100,100">
+<span class="success-word">Верно</span><br><br>
+<code>reverse()</code> переворачивает текущий порядок элементов. Исходный список: 2023, 2025, 2021, 2026. После <code>reverse()</code>: 2026, 2021, 2025, 2023. Первым стал <b>2026 — Смартфон</b>.<br><br>
+<b>Но это случайное совпадение!</b> Задача была «показать новинки сверху», а <code>reverse()</code> этого не гарантирует: если исходный список был не отсортирован, результат будет случайным.<br><br>
+<b>Как исправить:</b> использовать <code>sort(reverse=True)</code>.<br><br>
+<code>products.sort(reverse=True)<br>print(products)</code><br><br>
+[[Разобрать ситуацию глубже->Списки: Разбор 16]]
+</tw-passagedata>
+
+<tw-passagedata pid="313a" name="Списки: Ошибка 16Б" tags="l4" position="1200,6700" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 16Б->Списки: Пояснение 16Б]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="314a" name="Списки: Пояснение 16Б" tags="l15" position="300,6700" size="100,100">
+После <code>reverse()</code> список станет: 2026, 2021, 2025, 2023. Первым будет <b>2026 — Смартфон</b>, а не Ноутбук.<br><br>
+<b>Рекомендация:</b> <code>reverse()</code> не сортирует, а переворачивает. Для правильной сортировки используйте <code>sort(reverse=True)</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="315a" name="Списки: Ошибка 16В" tags="l4" position="1300,6700" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 16В->Списки: Пояснение 16В]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="316a" name="Списки: Пояснение 16В" tags="l15" position="400,6700" size="100,100">
+После <code>reverse()</code> список станет: 2026, 2021, 2025, 2023. Монитор (2023) окажется <b>последним</b>, а не первым.<br><br>
+<b>Рекомендация:</b> для сортировки по убыванию используйте <code>sort(reverse=True)</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="317a" name="Списки: Ошибка 16Г" tags="l4" position="1400,6700" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 16Г->Списки: Пояснение 16Г]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="318a" name="Списки: Пояснение 16Г" tags="l15" position="500,6700" size="100,100">
+После <code>reverse()</code> список станет: 2026, 2021, 2025, 2023. Мышь (2021) окажется <b>второй</b>, а не первой.<br><br>
+<b>Рекомендация:</b> для сортировки по убыванию используйте <code>sort(reverse=True)</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="319a" name="Списки: Разбор 16" tags="l3" position="1000,6800" size="100,100">
+<h2>Почему <code>reverse()</code> не решает задачу «показать новинки сверху»?</h2>
+<code>reverse()</code> только переворачивает текущий порядок элементов. Он не сравнивает даты и не сортирует данные. Если исходный список уже был упорядочен по возрастанию, результат может случайно совпасть с нужным, но на перемешанных данных порядок будет неверным. Для сортировки по убыванию нужен <code>sort(reverse=True)</code>.<br><br>
+<b>Как исправить в коде:</b><br><br>
+<code>products = [<br>&nbsp;&nbsp;&nbsp;&nbsp;'2023 — Монитор',<br>&nbsp;&nbsp;&nbsp;&nbsp;'2025 — Ноутбук',<br>&nbsp;&nbsp;&nbsp;&nbsp;'2021 — Мышь',<br>&nbsp;&nbsp;&nbsp;&nbsp;'2026 — Смартфон'<br>]<br>products.sort(reverse=True)<br>print(products)</code><br><br>
+<b>Что ещё стоит сделать в реальном приложении:</b> хранить дату выпуска отдельно (например, <code>{'year': 2026, 'name': 'Смартфон'}</code>) и сортировать по ней через <code>key=lambda x: x['year'], reverse=True</code>.<br><br>
+<b>Последствие для бизнеса:</b> клиент видит неактуальный каталог, теряет интерес, уходит к конкуренту, магазин теряет продажи новых товаров.<br><br>
+[[Перейти к финальному инциденту->Списки: Финальный инцидент]]
+</tw-passagedata>
+
+<tw-passagedata pid="320a" name="Списки: Финальный инцидент" tags="l3 sit sit_final" position="900,6900" size="100,100">
+<h2>Финальный инцидент. Сломанная корзина и утечка данных</h2>
+Клиент добавляет товар, вводит номер позиции, пытается удалить несуществующий товар и видит свой пароль на экране. В результате заказ не оформляется, а служба безопасности фиксирует утечку данных. Это уже не просто баг: репутационный и финансовый риск.<br><br>
+<code>cart = []<br>password = input('Введите пароль: ')<br>product = input('Введите товар: ')<br>number = int(input('Выберите номер товара: '))<br>cart.append(product)<br>cart.remove('Наушники')<br>print(cart[number])<br>print('Пароль пользователя:', password)</code><br><br>
+[[Перейти к вопросу->Списки: Финальный вопрос]]
+</tw-passagedata>
+
+<tw-passagedata pid="321a" name="Списки: Финальный вопрос" tags="l2" position="1000,6900" size="100,100">
+Какая ошибка наиболее опасна для безопасности клиента?<br><br>
+
+[[append() добавляет элемент в конец->Списки: Ошибка Ф1]]
+[[Пароль выводится на экран->Списки: Ответ Ф2]]
+[[remove() удаляет первый элемент->Списки: Ошибка Ф3]]
+[[Список можно очистить->Списки: Ошибка Ф4]]
+</tw-passagedata>
+
+<tw-passagedata pid="322a" name="Списки: Ответ Ф2" tags="l3" position="1100,7000" size="100,100">
+<span class="success-word">Верно</span><br><br>
+Вывод пароля на экран — это <b>прямая утечка конфиденциальной информации</b>. Пароль нельзя показывать в интерфейсе, сохранять в логах или пересылать в чате поддержки. Это самая опасная ошибка из всех перечисленных.<br><br>
+[[Разобрать финальный инцидент->Списки: Финальный разбор]]
+</tw-passagedata>
+
+<tw-passagedata pid="323a" name="Списки: Ошибка Ф1" tags="l4" position="1200,7000" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа Ф1->Списки: Пояснение Ф1]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="324a" name="Списки: Пояснение Ф1" tags="l15" position="300,7000" size="100,100">
+<code>append()</code> добавляет элемент в конец — это корректное поведение метода. Оно не является ошибкой безопасности.<br><br>
+<b>Рекомендация:</b> ищите ошибки, которые приводят к утечке данных, — например, вывод пароля на экран.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="325a" name="Списки: Ошибка Ф3" tags="l4" position="1300,7000" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа Ф3->Списки: Пояснение Ф3]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="326a" name="Списки: Пояснение Ф3" tags="l15" position="400,7000" size="100,100">
+<code>remove()</code> удаляет первый элемент — это корректное поведение метода. Но в данном коде <code>cart.remove('Наушники')</code> вызовет ошибку <code>ValueError</code>, потому что в корзине нет такого товара. Это ошибка, но не утечка данных.<br><br>
+<b>Рекомендация:</b> самая опасная ошибка — вывод пароля на экран.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="327a" name="Списки: Ошибка Ф4" tags="l4" position="1400,7000" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа Ф4->Списки: Пояснение Ф4]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="328a" name="Списки: Пояснение Ф4" tags="l15" position="500,7000" size="100,100">
+Возможность очистить список — это функция, а не ошибка безопасности. Опасность — в выводе пароля на экран.<br><br>
+<b>Рекомендация:</b> ищите ошибки, которые приводят к утечке конфиденциальных данных.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="329a" name="Списки: Финальный разбор" tags="l3" position="1000,7100" size="100,100">
+<h2>Найдите минимум пять проблем в коде</h2>
+<b>Ожидаемые проблемы:</b><br>
+<ol>
+<li>Пароль выводится на экран — <b>утечка конфиденциальной информации</b>.</li>
+<li>Пароль не проверяется на длину, буквы и цифры.</li>
+<li>Пустое название товара можно добавить в корзину.</li>
+<li>Название не очищается от пробелов и не нормализуется по регистру.</li>
+<li><code>cart.remove('Наушники')</code> вызывает <code>ValueError</code>, если товара нет.</li>
+<li><code>cart[number]</code> вызывает <code>IndexError</code> при 0, отрицательном числе или слишком большом номере.</li>
+<li>Пользовательский номер начинается с 1, а индекс списка — с 0.</li>
+</ol>
+<b>Верное исправление:</b><br><br>
+<code>cart = []<br>password = input('Введите пароль: ')<br>has_digit = any(symbol.isdigit() for symbol in password)<br>has_letter = any(symbol.isalpha() for symbol in password)<br>if len(password) &gt;= 8 and has_digit and has_letter:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Пароль принят')<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Слабый пароль')<br>product = input('Введите товар: ').strip()<br>if product:<br>&nbsp;&nbsp;&nbsp;&nbsp;cart.append(product)<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Название товара не может быть пустым')<br>number = int(input('Выберите номер товара: '))<br>if 1 &lt;= number &lt;= len(cart):<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Выбранный товар:', cart[number - 1])<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Неверный номер товара')<br>item = 'Наушники'<br>if item in cart:<br>&nbsp;&nbsp;&nbsp;&nbsp;cart.remove(item)<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Товара нет в корзине')<br>print('Корзина:', cart)</code><br><br>
 <b>Последствие для бизнеса:</b> незавершённый заказ, недовольный клиент, обращение в поддержку, утечка персональных данных, репутационные и финансовые потери.<br><br>
 [[Главная мысль квеста->Списки: Главная мысль]]
 </tw-passagedata>
