@@ -91,17 +91,17 @@ tw-passage[tags~="sit"] {
     width: 750px !important;
     max-width: calc(100% - 40px) !important;
     
-    /* Плотность 0.92 (92% белого). Картинка будет едва угадываться, текст идеально читаем */
-    background-color: rgba(255, 255, 255, 0.92) !important; 
+    /* Делаем фон полупрозрачным (0.65 = 65% белого, 35% прозрачности) */
+    background-color: rgba(255, 255, 255, 0.65) !important; 
     
-    /* Легкое размытие (можно вообще убрать, если хотите идеально четкий фон) */
-    backdrop-filter: blur(4px) !important;
-    -webkit-backdrop-filter: blur(4px) !important;
+    /* Эффект матового стекла (размывает картинку прямо под карточкой) */
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
     
-    /* Мягкая тень */
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15) !important;
-    border-radius: 16px !important;
-    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    /* Тень, чтобы карточка выделялась на фоне */
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.7) !important;
     
     padding: 30px 35px !important;
     font-size: 20px !important;
@@ -131,9 +131,8 @@ tw-passage[tags~="sit"] code {
     padding: 6px 10px !important;
     border-radius: 6px !important;
     color: #c7254e !important;
-    display: block !important; /* Сделал блочным, чтобы плашка кода была на всю ширину как на фото */
-    margin: 15px 0 !important;
-    width: fit-content;
+    display: inline-block !important;
+    margin: 10px 0 !important;
 }
 
 tw-passage[tags~="sit"] tw-link {
@@ -142,7 +141,7 @@ tw-passage[tags~="sit"] tw-link {
     max-width: 500px !important;
     margin: 25px auto 10px auto !important;
     padding: 12px 20px !important;
-    background-color: #F4F9FF !important;
+    background-color: #F4F9FF !important; /* Кнопка остается плотной, чтобы её было видно */
     border: 2px solid #4169E1 !important;
     border-radius: 8px !important;
     color: #4169E1 !important;
