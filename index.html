@@ -1709,7 +1709,30 @@ else:
 <li>Пользовательский номер начинается с 1, а индекс списка — с 0.</li>
 </ol>
 <b>Верное исправление:</b><br><br>
-<code>cart = []<br>password = input('Введите пароль: ')<br>has_digit = any(symbol.isdigit() for symbol in password)<br>has_letter = any(symbol.isalpha() for symbol in password)<br>if len(password) &gt;= 8 and has_digit and has_letter:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Пароль принят')<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Слабый пароль')<br>product = input('Введите товар: ').strip()<br>if product:<br>&nbsp;&nbsp;&nbsp;&nbsp;cart.append(product)<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Название товара не может быть пустым')<br>number = int(input('Выберите номер товара: '))<br>if 1 &lt;= number &lt;= len(cart):<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Выбранный товар:', cart[number - 1])<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Неверный номер товара')<br>item = 'Наушники'<br>if item in cart:<br>&nbsp;&nbsp;&nbsp;&nbsp;cart.remove(item)<br>else:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Товара нет в корзине')<br>print('Корзина:', cart)</code><br><br>
+<code>cart = []&lt;br&gt;
+password = input('Введите пароль: ')&lt;br&gt;
+has&#95;digit = any(symbol.isdigit() for symbol in password)&lt;br&gt;
+has&#95;letter = any(symbol.isalpha() for symbol in password)&lt;br&gt;
+if len(password) &gt;= 8 and has&#95;digit and has&#95;letter:&lt;br&gt;
+    print('Пароль принят')&lt;br&gt;
+else:&lt;br&gt;
+    print('Слабый пароль')&lt;br&gt;
+product = input('Введите товар: ').strip()&lt;br&gt;
+if product:&lt;br&gt;
+    cart.append(product)&lt;br&gt;
+else:&lt;br&gt;
+    print('Название товара не может быть пустым')&lt;br&gt;
+number = int(input('Выберите номер товара: '))&lt;br&gt;
+if 1 &lt;= number &lt;= len(cart):&lt;br&gt;
+    print('Выбранный товар:', cart[number - 1])&lt;br&gt;
+else:&lt;br&gt;
+    print('Неверный номер товара')&lt;br&gt;
+item = 'Наушники'&lt;br&gt;
+if item in cart:&lt;br&gt;
+    cart.remove(item)&lt;br&gt;
+else:&lt;br&gt;
+    print('Товара нет в корзине')&lt;br&gt;
+print('Корзина:', cart)</code><br><br>
 <b>Последствие для бизнеса:</b> незавершённый заказ, недовольный клиент, обращение в поддержку, утечка персональных данных, репутационные и финансовые потери.<br><br>
 [[Главная мысль квеста->Списки: Главная мысль]]
 </tw-passagedata>
