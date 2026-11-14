@@ -1205,7 +1205,9 @@ tw-passage[tags~="l1"] tw-link:hover {
 <span class="success-word">Верно</span><br><br>
 Оператор <code>in</code> сравнивает строки <b>точно</b>. Для Python <code>'iphone'</code> и <code>'IPhone'</code> — разные значения, поэтому условие ложно и выполняется ветка <code>else</code>.<br><br>
 <b>Как исправить:</b> нормализовать данные — убрать пробелы через <code>strip()</code> и привести к нижнему регистру через <code>lower()</code>.<br><br>
-<code>normalized_products = [p.lower().strip() for p in products]<br>if query.strip().lower() in normalized_products:<br>&nbsp;&nbsp;&nbsp;&nbsp;print('Товар доступен')</code><br><br>
+<code>`normalized_products = [p.lower().strip() for p in products]`<br>
+`if query.strip().lower() in normalized_products:`<br>
+`    print('Товар доступен')`<br><br></code><br><br>
 [[Разобрать ситуацию глубже->Списки: Разбор 11]]
 </tw-passagedata>
 
