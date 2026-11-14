@@ -9,9 +9,10 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Основы программирования.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Основы программирования" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="AE45C9B0-B1F9-4CD9-A712-6B9581B3534B" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+<tw-storydata name="Основы программирования" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="AE45C9B0-B1F9-4CD9-A712-6B9581B3534B" options="" tags="" zoom="1" hidden>
+
 <style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
-    /* ============================================================ */
+/* ============================================================ */
 /* 1. БАЗОВЫЕ НАСТРОЙКИ, ШРИФТ И ПЕРЕНОСЫ */
 /* ============================================================ */
 
@@ -84,26 +85,344 @@ tw-passage[tags]:not([tags~="l1"]) {
 }
 
 /* ============================================================ */
-/* 4. СИТУАЦИИ СПИСКОВ (ТЕГ sit) */
+/* 4. ВОПРОСЫ (ТЕГ l2) — ТЕКСТ ПО ШИРИНЕ, КНОПКИ ПО ЦЕНТРУ */
+/* ============================================================ */
+
+tw-passage[tags~="l2"] {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    color: #000000 !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    padding: 20px !important;
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-radius: 15px !important;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15) !important;
+    width: 700px !important;
+    max-width: calc(100% - 40px) !important;
+    font-size: 18px !important;
+}
+
+tw-passage[tags~="l2"] tw-link {
+    display: block !important;
+    width: 100% !important;
+    max-width: 450px !important;
+    margin: 8px auto !important;
+    padding: 12px 15px !important;
+    background-color: #F4F9FF !important;
+    border: 2px solid #4169E1 !important;
+    border-radius: 10px !important;
+    color: #4169E1 !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease-in-out !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+}
+
+tw-passage[tags~="l2"] tw-link:hover {
+    background-color: #4169E1 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 12px rgba(65, 105, 225, 0.3) !important;
+}
+
+/* ============================================================ */
+/* 5. ПРАВИЛЬНЫЕ ОТВЕТЫ / ОШИБКИ / ПОЯСНЕНИЯ (l3, l4, l15) */
+/* ============================================================ */
+
+tw-passage[tags~="l3"],
+tw-passage[tags~="l4"],
+tw-passage[tags~="l15"] {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    color: #000000 !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    padding: 20px 25px !important;
+    font-size: 18px !important;
+    line-height: 1.4 !important;
+    width: 700px !important;
+    max-width: calc(100% - 40px) !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 15px !important;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+tw-passage[tags~="l3"] code,
+tw-passage[tags~="l4"] code,
+tw-passage[tags~="l15"] code {
+    font-family: 'Consolas', 'Courier New', monospace !important;
+    font-size: 17px !important;
+    background-color: rgba(65, 105, 225, 0.1) !important;
+    padding: 4px 8px !important;
+    border-radius: 6px !important;
+    color: #c7254e !important;
+    display: inline-block !important;
+    margin: 5px 0 !important;
+}
+
+.success-word {
+    color: #008000 !important;
+    font-weight: bold !important;
+    font-size: 20px !important;
+    display: inline !important;
+}
+
+.error-word {
+    color: #CC0000 !important;
+    display: inline !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+}
+
+tw-passage[tags~="l3"] tw-link,
+tw-passage[tags~="l4"] tw-link,
+tw-passage[tags~="l15"] tw-link {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 450px !important;
+    margin: 15px auto 8px auto !important;
+    padding: 12px 15px !important;
+    background-color: #F4F9FF !important;
+    border: 2px solid #4169E1 !important;
+    border-radius: 10px !important;
+    color: #4169E1 !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+tw-passage[tags~="l3"] tw-link:hover,
+tw-passage[tags~="l4"] tw-link:hover,
+tw-passage[tags~="l15"] tw-link:hover {
+    background-color: #4169E1 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 12px rgba(65, 105, 225, 0.3) !important;
+}
+
+/* ============================================================ */
+/* 6. СТРЕЛКА «НАЗАД» — ТОЛЬКО НА ПОЯСНЕНИЯХ (l15) */
+/* ============================================================ */
+
+tw-link,
+tw-link:link,
+tw-link:visited,
+tw-link:hover,
+tw-link:active,
+tw-link.visited,
+tw-link.visited:hover,
+tw-link.visited:active {
+    color: #0000FF !important;
+    transition: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+tw-sidebar {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+tw-passage[tags~="l15"] tw-sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+}
+
+tw-sidebar tw-icon[alt="Redo"] {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+tw-sidebar tw-icon,
+tw-sidebar tw-icon[alt="Undo"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 36px !important;
+    margin: 0 !important;
+    color: #4169E1 !important;
+    pointer-events: auto !important;
+    background-color: #FFFFFF !important;
+    border: 2px solid #4169E1 !important;
+    border-radius: 50% !important;
+    width: 60px !important;
+    height: 60px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.2s ease !important;
+}
+
+tw-sidebar tw-icon:hover {
+    transform: scale(1.1) !important;
+    background-color: #F4F9FF !important;
+    box-shadow: 0 8px 20px rgba(65, 105, 225, 0.4) !important;
+}
+
+@media screen and (min-width: 821px) {
+    tw-passage[tags~="l15"] tw-sidebar {
+        position: fixed !important;
+        left: 20px !important;
+        top: 20px !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        flex-direction: row !important;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    tw-passage[tags~="l15"] tw-sidebar {
+        position: fixed !important;
+        left: 15px !important;
+        top: 15px !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+    }
+    tw-sidebar tw-icon,
+    tw-sidebar tw-icon[alt="Undo"] {
+        font-size: 30px !important;
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
+
+/* ============================================================ */
+/* 7. ПЕРВЫЙ ЭКРАН (l1) — ОБЛАКО С ТЕКСТОМ + КНОПКА ВНИЗУ */
+/* ============================================================ */
+
+tw-passage[tags~="l1"] {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    padding-bottom: 20vh !important;
+}
+
+.cloud-text {
+    pointer-events: auto !important;
+    position: absolute !important;
+    top: 4vh !important;
+    right: 2vw !important;
+    width: 85vw !important;
+    max-width: 420px !important;
+    min-height: 180px !important;
+    background-color: rgba(255, 255, 255, 0.96) !important;
+    border-radius: 30px !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+    padding: 30px 35px !important;
+    color: #1a1a1a !important;
+    font-size: 18px !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+    font-family: "Times New Roman", Times, serif !important;
+    z-index: 11 !important;
+}
+
+.cloud-text::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: 10px !important;
+    left: -10px !important;
+    width: 25px !important;
+    height: 25px !important;
+    background-color: rgba(255, 255, 255, 0.96) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05) !important;
+    z-index: -1 !important;
+}
+
+.cloud-text::before {
+    content: "" !important;
+    position: absolute !important;
+    bottom: -25px !important;
+    left: -35px !important;
+    width: 14px !important;
+    height: 14px !important;
+    background-color: rgba(255, 255, 255, 0.96) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05) !important;
+    z-index: -1 !important;
+}
+
+tw-passage[tags~="l1"] tw-link,
+tw-passage[tags~="l1"] tw-link.visited {
+    position: static !important;
+    transform: none !important;
+    margin: 0 10px !important;
+    display: inline-block !important;
+    width: auto !important;
+    min-width: 200px !important;
+    padding: 12px 20px !important;
+    background: linear-gradient(135deg, #4A90E2, #357ABD) !important;
+    color: #FFFFFF !important;
+    border-radius: 8px !important;
+    border: 2px solid #FFFFFF !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+}
+
+tw-passage[tags~="l1"] tw-link { flex-shrink: 0 !important; }
+tw-passage[tags~="l1"] tw-link:nth-of-type(1) { margin-top: auto !important; }
+
+tw-passage[tags~="l1"] tw-link:hover {
+    transform: scale(1.05) !important;
+    background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ============================================================ */
+/* 8. СИТУАЦИИ СПИСКОВ (ТЕГ sit) — В САМОМ КОНЦЕ, ЧТОБЫ ПЕРЕБИТЬ l3 */
 /* ============================================================ */
 
 tw-passage[tags~="sit"] {
     width: 750px !important;
     max-width: calc(100% - 40px) !important;
     
-    /* Прозрачность 0.6 (60% белого). Это ключ к тому, чтобы картинка просвечивала */
-    background-color: rgba(255, 255, 255, 0.6) !important; 
+    /* Прозрачность 0.6 (60% белого). Картинка будет просвечивать */
+    background-color: rgba(255, 255, 255, 0.65) !important; 
     
     /* Эффект матового стекла (размывает всё, что находится ЗА карточкой) */
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
     
     /* Легкая тень */
-    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.2) !important;
     border-radius: 20px !important;
     
     /* Тонкая полупрозрачная рамка для блика */
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
     
     padding: 30px 35px !important;
     font-size: 20px !important;
@@ -160,341 +479,6 @@ tw-passage[tags~="sit"] tw-link {
 tw-passage[tags~="sit"] tw-link:hover {
     background-color: #4169E1 !important;
     color: #FFFFFF !important;
-}
-/* ============================================================ */
-/* 5. ВОПРОСЫ (ТЕГ l2) — ТЕКСТ ПО ШИРИНЕ, КНОПКИ ПО ЦЕНТРУ */
-/* ============================================================ */
-
-tw-passage[tags~="l2"] {
-    text-align: justify !important;
-    text-justify: inter-word !important;
-    color: #000000 !important;
-    max-height: 80vh !important;
-    overflow-y: auto !important;
-    padding: 20px !important;
-    background-color: rgba(255, 255, 255, 0.85) !important;
-    border-radius: 15px !important;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15) !important;
-    width: 700px !important;
-    max-width: calc(100% - 40px) !important;
-    font-size: 18px !important;
-}
-
-tw-passage[tags~="l2"] tw-link {
-    display: block !important;
-    width: 100% !important;
-    max-width: 450px !important;
-    margin: 8px auto !important;
-    padding: 12px 15px !important;
-    background-color: #F4F9FF !important;
-    border: 2px solid #4169E1 !important;
-    border-radius: 10px !important;
-    color: #4169E1 !important;
-    font-size: 18px !important;
-    font-weight: bold !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    transition: all 0.2s ease-in-out !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
-}
-
-tw-passage[tags~="l2"] tw-link:hover {
-    background-color: #4169E1 !important;
-    color: #FFFFFF !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 5px 12px rgba(65, 105, 225, 0.3) !important;
-}
-
-/* ============================================================ */
-/* 6. ПРАВИЛЬНЫЕ ОТВЕТЫ / ОШИБКИ / ПОЯСНЕНИЯ (l3, l4, l15) */
-/* ============================================================ */
-
-tw-passage[tags~="l3"],
-tw-passage[tags~="l4"],
-tw-passage[tags~="l15"] {
-    text-align: justify !important;
-    text-justify: inter-word !important;
-    color: #000000 !important;
-    max-height: 80vh !important;
-    overflow-y: auto !important;
-    padding: 20px 25px !important;
-    font-size: 18px !important;
-    line-height: 1.4 !important;
-
-    width: 700px !important;
-    max-width: calc(100% - 40px) !important;
-
-    background-color: rgba(255, 255, 255, 0.9) !important;
-    border-radius: 15px !important;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15) !important;
-}
-
-tw-passage[tags~="l3"] code,
-tw-passage[tags~="l4"] code,
-tw-passage[tags~="l15"] code {
-    font-family: 'Consolas', 'Courier New', monospace !important;
-    font-size: 17px !important;
-    background-color: rgba(65, 105, 225, 0.1) !important;
-    padding: 4px 8px !important;
-    border-radius: 6px !important;
-    color: #c7254e !important;
-    display: inline-block !important;
-    margin: 5px 0 !important;
-}
-
-.success-word {
-    color: #008000 !important;
-    font-weight: bold !important;
-    font-size: 20px !important;
-    display: inline !important;
-}
-
-.error-word {
-    color: #CC0000 !important;
-    display: inline !important;
-    font-size: 20px !important;
-    font-weight: bold !important;
-}
-
-/* Кнопки в l3, l4, l15 — ОДИН общий блок */
-tw-passage[tags~="l3"] tw-link,
-tw-passage[tags~="l4"] tw-link,
-tw-passage[tags~="l15"] tw-link {
-    text-align: center !important;
-    display: block !important;
-    width: 100% !important;
-    max-width: 450px !important;
-    margin: 15px auto 8px auto !important;
-    padding: 12px 15px !important;
-
-    background-color: #F4F9FF !important;
-    border: 2px solid #4169E1 !important;
-    border-radius: 10px !important;
-    color: #4169E1 !important;
-    font-size: 18px !important;
-    font-weight: bold !important;
-    text-decoration: none !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
-    transition: all 0.2s ease-in-out !important;
-}
-
-tw-passage[tags~="l3"] tw-link:hover,
-tw-passage[tags~="l4"] tw-link:hover,
-tw-passage[tags~="l15"] tw-link:hover {
-    background-color: #4169E1 !important;
-    color: #FFFFFF !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 5px 12px rgba(65, 105, 225, 0.3) !important;
-}
-
-/* ============================================================ */
-/* 7. СТРЕЛКА «НАЗАД» — ТОЛЬКО НА ПОЯСНЕНИЯХ (l15) */
-/* ============================================================ */
-
-tw-link,
-tw-link:link,
-tw-link:visited,
-tw-link:hover,
-tw-link:active,
-tw-link.visited,
-tw-link.visited:hover,
-tw-link.visited:active {
-    color: #0000FF !important;
-    transition: none !important;
-    -webkit-tap-highlight-color: transparent !important;
-}
-
-/* По умолчанию стрелку скрываем везде */
-tw-sidebar {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-}
-
-/* Показываем только в пояснениях (l15) */
-tw-passage[tags~="l15"] tw-sidebar {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 999999 !important;
-    pointer-events: auto !important;
-}
-
-tw-sidebar tw-icon[alt="Redo"] {
-    display: none !important;
-    visibility: hidden !important;
-}
-
-tw-sidebar tw-icon,
-tw-sidebar tw-icon[alt="Undo"] {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    font-size: 36px !important;
-    margin: 0 !important;
-    color: #4169E1 !important;
-    pointer-events: auto !important;
-    background-color: #FFFFFF !important;
-    border: 2px solid #4169E1 !important;
-    border-radius: 50% !important;
-    width: 60px !important;
-    height: 60px !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4) !important;
-    transition: all 0.2s ease !important;
-}
-
-tw-sidebar tw-icon:hover {
-    transform: scale(1.1) !important;
-    background-color: #F4F9FF !important;
-    box-shadow: 0 8px 20px rgba(65, 105, 225, 0.4) !important;
-}
-
-/* Позиционирование стрелки — левый верхний угол */
-@media screen and (min-width: 821px) {
-    tw-passage[tags~="l15"] tw-sidebar {
-        position: fixed !important;
-        left: 20px !important;
-        top: 20px !important;
-        right: auto !important;
-        bottom: auto !important;
-        transform: none !important;
-        flex-direction: row !important;
-    }
-}
-
-@media screen and (max-width: 820px) {
-    tw-passage[tags~="l15"] tw-sidebar {
-        position: fixed !important;
-        left: 15px !important;
-        top: 15px !important;
-        right: auto !important;
-        bottom: auto !important;
-        transform: none !important;
-    }
-
-    tw-sidebar tw-icon,
-    tw-sidebar tw-icon[alt="Undo"] {
-        font-size: 30px !important;
-        width: 45px !important;
-        height: 45px !important;
-    }
-}
-
-/* ============================================================ */
-/* 8. ПЕРВЫЙ ЭКРАН (l1) — ОБЛАКО С ТЕКСТОМ + КНОПКА ВНИЗУ */
-/* ============================================================ */
-
-tw-passage[tags~="l1"] {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    z-index: 10 !important;
-    pointer-events: none !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    padding-bottom: 20vh !important;
-}
-
-.cloud-text {
-    pointer-events: auto !important;
-    position: absolute !important;
-    top: 4vh !important;
-    right: 2vw !important;
-
-    width: 85vw !important;
-    max-width: 420px !important;
-    min-height: 180px !important;
-
-    background-color: rgba(255, 255, 255, 0.96) !important;
-    border-radius: 30px !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
-
-    padding: 30px 35px !important;
-    color: #1a1a1a !important;
-    font-size: 18px !important;
-    line-height: 1.45 !important;
-    text-align: center !important;
-    font-family: "Times New Roman", Times, serif !important;
-    z-index: 11 !important;
-}
-
-.cloud-text::after {
-    content: "" !important;
-    position: absolute !important;
-    bottom: 10px !important;
-    left: -10px !important;
-    width: 25px !important;
-    height: 25px !important;
-    background-color: rgba(255, 255, 255, 0.96) !important;
-    border-radius: 50% !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05) !important;
-    z-index: -1 !important;
-}
-
-.cloud-text::before {
-    content: "" !important;
-    position: absolute !important;
-    bottom: -25px !important;
-    left: -35px !important;
-    width: 14px !important;
-    height: 14px !important;
-    background-color: rgba(255, 255, 255, 0.96) !important;
-    border-radius: 50% !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05) !important;
-    z-index: -1 !important;
-}
-
-tw-passage[tags~="l1"] tw-link,
-tw-passage[tags~="l1"] tw-link.visited {
-    position: static !important;
-    transform: none !important;
-    margin: 0 10px !important;
-    display: inline-block !important;
-    width: auto !important;
-    min-width: 200px !important;
-    padding: 12px 20px !important;
-
-    background: linear-gradient(135deg, #4A90E2, #357ABD) !important;
-    color: #FFFFFF !important;
-    border-radius: 8px !important;
-    border: 2px solid #FFFFFF !important;
-    text-decoration: none !important;
-    font-size: 16px !important;
-    font-weight: bold !important;
-    white-space: nowrap !important;
-    text-align: center !important;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
-    transition: all 0.3s ease !important;
-    z-index: 999999 !important;
-    pointer-events: auto !important;
-}
-
-tw-passage[tags~="l1"] tw-link {
-    flex-shrink: 0 !important;
-}
-
-tw-passage[tags~="l1"] tw-link:nth-of-type(1) {
-    margin-top: auto !important;
-}
-
-tw-passage[tags~="l1"] tw-link:hover {
-    transform: scale(1.05) !important;
-    background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
 }
 </style>
 
