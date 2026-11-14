@@ -90,12 +90,19 @@ tw-passage[tags]:not([tags~="l1"]) {
 tw-passage[tags~="sit"] {
     width: 750px !important;
     max-width: calc(100% - 40px) !important;
-    background-color: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25) !important;
+    
+    /* Прозрачность фона 75% (0.75). Если нужно еще прозрачнее, уменьшите до 0.65 */
+    background-color: rgba(255, 255, 255, 0.75) !important; 
+    
+    /* Эффект матового стекла (размытие фона под карточкой) */
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    
+    /* Легкая тень для объема */
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15) !important;
     border-radius: 20px !important;
-    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    
     padding: 30px 35px !important;
     font-size: 20px !important;
     font-weight: normal !important;
@@ -152,7 +159,6 @@ tw-passage[tags~="sit"] tw-link:hover {
     transform: translateY(-2px) !important;
     box-shadow: 0 5px 12px rgba(65, 105, 225, 0.3) !important;
 }
-
 /* ============================================================ */
 /* 5. ВОПРОСЫ (ТЕГ l2) — ТЕКСТ ПО ШИРИНЕ, КНОПКИ ПО ЦЕНТРУ */
 /* ============================================================ */
