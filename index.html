@@ -46,7 +46,7 @@ tw-passage p { margin: 5px 0 !important; padding: 0 !important; }
 /* ============================================================ */
 /* 2. ФОНОВЫЕ ИЗОБРАЖЕНИЯ ДЛЯ ВСЕХ БЛОКОВ */
 /* ============================================================ */
-tw-story[tags~="l1"] { background-image: url("7.jpeg"); }
+tw-story[tags~="l1"] { background-color: #f0f8ff; background-image: url("7.jpeg"); }
 tw-story[tags~="l2"] { background-image: url("print.jpeg"); }
 
 /* Сначала идут ОБЩИЕ правила */
@@ -110,7 +110,6 @@ tw-passage[tags]:not([tags~="l1"]) {
 }
 
 /* ============================================================ */
-//* ============================================================ */
 /* 4. СПЕЦИАЛЬНЫЕ СТИЛИ ТОЛЬКО ДЛЯ СИТУАЦИЙ В СПИСКАХ (ТЕГ sit) */
 /* ============================================================ */
 tw-passage[tags~="sit"] { 
@@ -606,7 +605,7 @@ tw-passage[tags~="l1"] {
     top: 4vh !important;      
     right: 2vw !important;    
     
-    width: 85vw !important;
+    width: 85% !important;     /* ИСПРАВЛЕНО: было 85vw, из-за чего появлялся скролл */
     max-width: 420px !important; 
     min-height: 180px !important; 
     
@@ -701,7 +700,8 @@ tw-passage[tags~="l1"] tw-link:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="l1" color="green"></tw-tag><tw-tag name="l2" color="purple"></tw-tag><tw-tag name="l3" color="green"></tw-tag><tw-tag name="l4" color="green"></tw-tag><tw-tag name="l5" color="green"></tw-tag><tw-tag name="l6" color="green"></tw-tag><tw-tag name="l7" color="green"></tw-tag><tw-tag name="l8" color="purple"></tw-tag><tw-tag name="l9" color="purple"></tw-tag><tw-tag name="l10" color="purple"></tw-tag><tw-tag name="l11" color="purple"></tw-tag><tw-tag name="l13" color="purple"></tw-tag><tw-tag name="l14" color="purple"></tw-tag><tw-tag name="l15" color="purple"></tw-tag><tw-tag name="l16" color="orange"></tw-tag><tw-tag name="l17" color="orange"></tw-tag><tw-tag name="l18" color="orange"></tw-tag><tw-tag name="l19" color="orange"></tw-tag><tw-tag name="l20" color="orange"></tw-tag><tw-tag name="l21" color="orange"></tw-tag><tw-tag name="l22" color="blue"></tw-tag><tw-tag name="l23" color="blue"></tw-tag><tw-tag name="l24" color="blue"></tw-tag><tw-tag name="l25" color="blue"></tw-tag><tw-tag name="l26" color="blue"></tw-tag><tw-tag name="l27" color="blue"></tw-tag><tw-tag name="l28" color="blue"></tw-tag><tw-tag name="l29" color="blue"></tw-tag><tw-tag name="l30" color="blue"></tw-tag><tw-tag name="l31" color="blue"></tw-tag><tw-tag name="l32" color="blue"></tw-tag><tw-tag name="l33" color="blue"></tw-tag><tw-tag name="l34" color="blue"></tw-tag><tw-tag name="l35" color="blue"></tw-tag><tw-tag name="l36" color="blue"></tw-tag><tw-tag name="l37" color="blue"></tw-tag><tw-tag name="l38" color="blue"></tw-tag><tw-tag name="l39" color="blue"></tw-tag><tw-tag name="l40" color="blue"></tw-tag><tw-tag name="l42" color="blue"></tw-tag><tw-tag name="l41" color="blue"></tw-tag><tw-tag name="l43" color="blue"></tw-tag><tw-tag name="l44" color="blue"></tw-tag><tw-tag name="l45" color="blue"></tw-tag><tw-tag name="l46" color="blue"></tw-tag><tw-tag name="l47" color="blue"></tw-tag><tw-tag name="l48" color="blue"></tw-tag><tw-tag name="l49" color="blue"></tw-tag><tw-tag name="l50" color="blue"></tw-tag><tw-tag name="l51" color="red"></tw-tag><tw-tag name="l52" color="red"></tw-tag><tw-tag name="l53" color="red"></tw-tag><tw-tag name="l54" color="red"></tw-tag><tw-tag name="l55" color="red"></tw-tag><tw-tag name="l56" color="red"></tw-tag><tw-tag name="l57" color="red"></tw-tag><tw-tag name="l58" color="yellow"></tw-tag><tw-tag name="l59" color="yellow"></tw-tag><tw-tag name="l60" color="yellow"></tw-tag><tw-tag name="l61" color="yellow"></tw-tag><tw-tag name="l62" color="yellow"></tw-tag><tw-tag name="l63" color="yellow"></tw-tag><tw-tag name="l64" color="yellow"></tw-tag><tw-tag name="l65" color="yellow"></tw-tag><tw-tag name="l66" color="yellow"></tw-tag><tw-tag name="l67" color="yellow"></tw-tag><tw-tag name="l68" color="yellow"></tw-tag><tw-tag name="l69" color="yellow"></tw-tag><tw-tag name="l70" color="yellow"></tw-tag><tw-tag name="l71" color="yellow"></tw-tag><tw-tag name="l72" color="yellow"></tw-tag><tw-tag name="l73" color="yellow"></tw-tag>
-<tw-passagedata pid="1" name="Пользователь" tags="l1" position="800,100" size="100,100">(set: $history to (a:), $correct to 0, $wrong to 0, $perfect to true, $attemptHistory to (a:), $resetFlag to true, $attempts to 0)<div class="cloud-text">Здравствуйте. Меня зовут София Ивановна, я преподаватель дисциплины "Основы программирования". Я помогу тебе разобраться с типами данных в Python.</div>
+<tw-passagedata pid="1" name="Пользователь" tags="l1" position="800,100" size="100,100">(set: $history to (a:), $correct to 0, $wrong to 0, $perfect to true, $attemptHistory to (a:), $resetFlag to true, $attempts to 0)
+<div class="cloud-text">Здравствуйте. Меня зовут София Ивановна, я преподаватель дисциплины "Основы программирования". Я помогу тебе разобраться с типами данных в Python.</div>
 [[Списки->Списки: Начало]]</tw-passagedata>
 <tw-passagedata pid="200" name="Списки: Начало" tags="l3" position="800,3000" size="100,100">
 <h2>Новая тема: Списки в Python</h2>
@@ -739,7 +739,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="203" name="Списки: Ошибка 1А" tags="l4" position="1100,3200" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 1А->Списки: Пояснение 1А]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -751,6 +752,7 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="204" name="Списки: Ответ 1Б" tags="l3" position="1200,3200" size="100,100">
+(set: $correct to $correct + 1)
 <span class="success-word">Верно</span><br><br>
 Метод <code>append()</code> добавляет элемент в конец списка.<br><br>
 После выполнения операции список будет иметь вид:<br><br>
@@ -759,7 +761,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="205" name="Списки: Ошибка 1В" tags="l4" position="1300,3200" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 1В->Списки: Пояснение 1В]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -786,6 +789,7 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="208" name="Списки: Ответ 2А" tags="l3" position="1100,3400" size="100,100">
+(set: $correct to $correct + 1)
 <span class="success-word">Верно</span><br><br>
 Оператор <code>del</code> удаляет элемент по указанному индексу.<br><br>
 После выполнения операции список будет иметь вид:<br><br>
@@ -794,6 +798,7 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="209" name="Списки: Ответ 2Б" tags="l3" position="1200,3400" size="100,100">
+(set: $correct to $correct + 1)
 <span class="success-word">Верно</span><br><br>
 Метод <code>remove()</code> удаляет первый элемент, значение которого совпадает с указанным.<br><br>
 После выполнения операции список будет иметь вид:<br><br>
@@ -802,7 +807,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="210" name="Списки: Ошибка 2В" tags="l4" position="1300,3400" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 2В->Списки: Пояснение 2В]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -829,7 +835,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="213" name="Списки: Ошибка 3А" tags="l4" position="1100,3600" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 3А->Списки: Пояснение 3А]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -841,6 +848,7 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="214" name="Списки: Ответ 3Б" tags="l3" position="1200,3600" size="100,100">
+(set: $correct to $correct + 1)
 <span class="success-word">Верно</span><br><br>
 Метод <code>insert(2, 'Елена')</code> вставляет элемент на индекс 2, при этом остальные элементы сдвигаются вправо.<br><br>
 После выполнения операции список будет иметь вид:<br><br>
@@ -849,7 +857,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="215" name="Списки: Ошибка 3В" tags="l4" position="1300,3600" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 3В->Списки: Пояснение 3В]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -876,7 +885,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="218" name="Списки: Ошибка 4А" tags="l4" position="1100,3800" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 4А->Списки: Пояснение 4А]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -888,6 +898,7 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="219" name="Списки: Ответ 4Б" tags="l3" position="1200,3800" size="100,100">
+(set: $correct to $correct + 1)
 <span class="success-word">Верно</span><br><br>
 Оператор <code>in</code> проверяет, содержится ли указанный элемент в списке.<br><br>
 Выражение <code>'Павел' in clients</code> возвращает <code>True</code>.<br><br>
@@ -895,7 +906,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="220" name="Списки: Ошибка 4В" tags="l4" position="1300,3800" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 4В->Списки: Пояснение 4В]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -922,7 +934,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="223" name="Списки: Ошибка 5А" tags="l4" position="1100,4000" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 5А->Списки: Пояснение 5А]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -934,6 +947,7 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="224" name="Списки: Ответ 5Б" tags="l3" position="1200,4000" size="100,100">
+(set: $correct to $correct + 1)
 <span class="success-word">Верно</span><br><br>
 Оператор <code>in</code> проверяет наличие элемента в списке.<br><br>
 Выражение <code>'Пылесос' in stock</code> возвращает <code>True</code>, следовательно, товар можно добавить в корзину.<br><br>
@@ -941,7 +955,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="225" name="Списки: Ошибка 5В" tags="l4" position="1300,4000" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 5В->Списки: Пояснение 5В]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -968,7 +983,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="228" name="Списки: Ошибка 6А" tags="l4" position="1100,4200" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 6А->Списки: Пояснение 6А]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -980,6 +996,7 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="229" name="Списки: Ответ 6Б" tags="l3" position="1200,4200" size="100,100">
+(set: $correct to $correct + 1)
 <span class="success-word">Верно</span><br><br>
 Метод <code>append()</code> добавляет элемент в конец списка.<br><br>
 После выполнения операции список будет иметь вид:<br><br>
@@ -988,7 +1005,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="230" name="Списки: Ошибка 6В" tags="l4" position="1300,4200" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 6В->Списки: Пояснение 6В]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -1015,6 +1033,7 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="233" name="Списки: Ответ 7А" tags="l3" position="1100,4400" size="100,100">
+(set: $correct to $correct + 1)
 <span class="success-word">Верно</span><br><br>
 Оператор <code>del</code> удаляет элемент по указанному индексу.<br><br>
 После выполнения операции список будет иметь вид:<br><br>
@@ -1023,7 +1042,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="234" name="Списки: Ошибка 7Б" tags="l4" position="1200,4400" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 7Б->Списки: Пояснение 7Б]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -1035,7 +1055,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="235" name="Списки: Ошибка 7В" tags="l4" position="1300,4400" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 7В->Списки: Пояснение 7В]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -1062,6 +1083,7 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="238" name="Списки: Ответ 8А" tags="l3" position="1100,4600" size="100,100">
+(set: $correct to $correct + 1)
 <span class="success-word">Верно</span><br><br>
 Метод <code>clear()</code> удаляет все элементы списка, при этом сама переменная сохраняется как пустой список:<br><br>
 `&#91;&#93;`<br><br>
@@ -1069,7 +1091,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="239" name="Списки: Ошибка 8Б" tags="l4" position="1200,4600" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 8Б->Списки: Пояснение 8Б]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -1081,7 +1104,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="240" name="Списки: Ошибка 8В" tags="l4" position="1300,4600" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 8В->Списки: Пояснение 8В]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -1108,7 +1132,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="243" name="Списки: Ошибка 9А" tags="l4" position="1100,4800" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 9А->Списки: Пояснение 9А]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -1120,13 +1145,15 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="244" name="Списки: Ответ 9Б" tags="l3" position="1200,4800" size="100,100">
+(set: $correct to $correct + 1)
 <span class="success-word">Верно</span><br><br>
 Метод <code>insert(1, 'Хирург')</code> вставляет элемент на индекс 1, а остальные элементы сдвигаются вправо.<br><br>
 [[Следующая ситуация->Списки: Ситуация 10]]
 </tw-passagedata>
 
 <tw-passagedata pid="245" name="Списки: Ошибка 9В" tags="l4" position="1300,4800" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 9В->Списки: Пояснение 9В]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -1153,7 +1180,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="248" name="Списки: Ошибка 10А" tags="l4" position="1100,5000" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 10А->Списки: Пояснение 10А]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
@@ -1165,6 +1193,7 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="249" name="Списки: Ответ 10Б" tags="l3" position="1200,5000" size="100,100">
+(set: $correct to $correct + 1)
 <span class="success-word">Верно</span><br><br>
 Списки в Python являются изменяемыми структурами данных.<br><br>
 Запись <code>schedule[1] = 'Бокс'</code> заменяет элемент <code>'Бассейн (ср)'</code> на <code>'Бокс'</code>.<br><br>
@@ -1172,7 +1201,8 @@ tw-passage[tags~="l1"] tw-link:hover {
 </tw-passagedata>
 
 <tw-passagedata pid="250" name="Списки: Ошибка 10В" tags="l4" position="1300,5000" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+(set: $wrong to $wrong + 1, $perfect to false)
+<span class="error-word">Не верно</span><br><br>
 [[Пояснение не верного ответа 10В->Списки: Пояснение 10В]]
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
