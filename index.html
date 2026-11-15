@@ -1188,11 +1188,11 @@ tw-passage[tags~="l1"] tw-link:hover {
 <tw-passagedata pid="260" name="Списки: Ситуация 11" tags="l3 sit sit11" position="900,5100" size="100,100">
 <h2>Ситуация 11. Клиент ищет iPhone, а магазин его «не видит»</h2>
 Клиент вводит в поиске <b>iphone</b>. В каталоге товар записан как <b>IPhone</b>. Приложение отвечает: «Товар не найден». Клиент решает, что товара нет, уходит в другой магазин и оформляет заказ там.<br><br>
-<code>products = ['IPhone', 'Samsung Galaxy', 'Xiaomi']&lt;br&gt;
-query = 'iphone'&lt;br&gt;
-normalized&#95;products = [p.lower().strip() for p in products]&lt;br&gt;
-&lt;br&gt;
-if query.strip().lower() in normalized&#95;products:&lt;br&gt;
+<code>products = ['IPhone', 'Samsung Galaxy', 'Xiaomi']
+query = 'iphone'
+normalized_products = [p.lower().strip() for p in products]
+
+if query.strip().lower() in normalized_products:
     print('Товар доступен')</code><br><br>
 [[Перейти к вопросу->Списки: Задание 11]]
 </tw-passagedata>
@@ -1210,8 +1210,8 @@ if query.strip().lower() in normalized&#95;products:&lt;br&gt;
 <span class="success-word">Верно</span><br><br>
 Оператор <code>in</code> сравнивает строки <b>точно</b>. Для Python <code>'iphone'</code> и <code>'IPhone'</code> — разные значения, поэтому условие ложно и выполняется ветка <code>else</code>.<br><br>
 <b>Как исправить:</b> нормализовать данные — убрать пробелы через <code>strip()</code> и привести к нижнему регистру через <code>lower()</code>.<br><br>
-<code>normalized&#95;products = [p.lower().strip() for p in products]&lt;br&gt;
-if query.strip().lower() in normalized&#95;products:&lt;br&gt;
+<code>normalized_products = [p.lower().strip() for p in products]
+if query.strip().lower() in normalized_products:
     print('Товар доступен')</code><br><br>
 [[Разобрать ситуацию глубже->Списки: Разбор 11]]
 </tw-passagedata>
@@ -1264,16 +1264,16 @@ if query.strip().lower() in normalized&#95;products:&lt;br&gt;
 <li><code>iPhone 15</code> — модель с уточнением.</li>
 </ul>
 <b>Как исправить в коде:</b><br><br>
-<code>products = ['IPhone', 'Samsung Galaxy', 'Xiaomi']&lt;br&gt;
-query = 'iphone'&lt;br&gt;
-&lt;br&gt;
-# 1. Нормализуем список товаров: приводим все названия к нижнему регистру и убираем пробелы&lt;br&gt;
-normalized&#95;products = [p.lower().strip() for p in products]&lt;br&gt;
-&lt;br&gt;
-# 2. Нормализуем запрос клиента точно так же и проверяем наличие&lt;br&gt;
-if query.strip().lower() in normalized&#95;products:&lt;br&gt;
-    print('Товар доступен')&lt;br&gt;
-else:&lt;br&gt;
+<code>products = ['IPhone', 'Samsung Galaxy', 'Xiaomi']
+query = 'iphone'
+
+# 1. Нормализуем список товаров: приводим все названия к нижнему регистру и убираем пробелы
+normalized_products = [p.lower().strip() for p in products]
+
+# 2. Нормализуем запрос клиента точно так же и проверяем наличие
+if query.strip().lower() in normalized_products:
+    print('Товар доступен')
+else:
     print('Товар не найден')</code><br><br>
 <b>Что ещё стоит сделать в реальном магазине:</b> поиск по артикулу и ID товара, по синонимам, исправление опечаток (fuzzy search).<br><br>
 <b>Последствие для бизнеса:</b> клиент не находит нужный товар, уходит к конкуренту, магазин теряет продажу и доверие.<br><br>
