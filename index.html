@@ -1187,12 +1187,12 @@ tw-passage[tags~="l1"] tw-link:hover {
 <tw-passagedata pid="260" name="Списки: Ситуация 11" tags="l3 sit sit11" position="900,5100" size="100,100">
 <h2>Ситуация 11. Клиент ищет iPhone, а магазин его «не видит»</h2>
 Клиент вводит в поиске <b>iphone</b>. В каталоге товар записан как <b>IPhone</b>. Приложение отвечает: «Товар не найден». Клиент решает, что товара нет, уходит в другой магазин и оформляет заказ там.<br><br>
-<code>products = ['IPhone', 'Samsung Galaxy', 'Xiaomi']
+products = ['IPhone', 'Samsung Galaxy', 'Xiaomi']
 query = 'iphone'
 normalized_products = [p.lower().strip() for p in products]
 
 if query.strip().lower() in normalized_products:
-    print('Товар доступен')</code><br><br>
+    print('Товар доступен')<br><br>
 [[Перейти к вопросу->Списки: Задание 11]]
 </tw-passagedata>
     
