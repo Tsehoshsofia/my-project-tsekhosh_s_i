@@ -1365,12 +1365,12 @@ else:
 <span class="success-word">Верно</span><br><br>
 Проверка <code>if password:</code> подтверждает только, что пользователь что-то ввёл. Она <b>не защищает</b> аккаунт. Пароль <code>1</code> - непустая строка, поэтому регистрация пройдёт.<br><br>
 <b>Как исправить:</b> проверять длину, наличие букв и цифр.<br><br>
-<code>has_digit = any(symbol.isdigit() for symbol in password)
+has_digit = any(symbol.isdigit() for symbol in password)
 has_letter = any(symbol.isalpha() for symbol in password)
 if len(password) >= 8 and has_digit and has_letter:
     print('Пароль принят')
 else:
-    print('Пароль должен содержать минимум 8 символов, буквы и цифры')</code><br><br>
+    print('Пароль должен содержать минимум 8 символов, буквы и цифры')<br><br>
 [[Следующая ситуация->Списки: Ситуация 14]]
 </tw-passagedata>
 
