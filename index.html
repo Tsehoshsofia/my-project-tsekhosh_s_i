@@ -1209,8 +1209,8 @@ if query.strip().lower() in normalized_products:
 <span class="success-word">Верно</span><br><br>
 Оператор <code>in</code> сравнивает строки <b>точно</b>. Для Python <code>'iphone'</code> и <code>'IPhone'</code> - разные значения, поэтому условие ложно и выполняется ветка <code>else</code>.<br><br>
 <b>Как исправить:</b> нормализовать данные - убрать пробелы через <code>strip()</code> и привести к нижнему регистру через <code>lower()</code>.<br><br>
-<code>normalized&#95;products = [p.lower().strip() for p in products]
-if query.strip().lower() in normalized&#95;products:</code><br><br>
+<code>normalized_<span></span>products = [p.lower().strip() for p in products]
+if query.strip().lower() in normalized_<span></span>products:</code><br><br>
 [[Следующая ситуация->Списки: Ситуация 12]]
 </tw-passagedata>
     
