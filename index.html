@@ -1209,9 +1209,8 @@ if query.strip().lower() in normalized_products:
 <span class="success-word">Верно</span><br><br>
 Оператор <code>in</code> сравнивает строки <b>точно</b>. Для Python <code>'iphone'</code> и <code>'IPhone'</code> — разные значения, поэтому условие ложно и выполняется ветка <code>else</code>.<br><br>
 <b>Как исправить:</b> нормализовать данные — убрать пробелы через <code>strip()</code> и привести к нижнему регистру через <code>lower()</code>.<br><br>
-<code>normalized_products = [p.lower().strip() for p in products]
-if query.strip().lower() in normalized_products:
-    print('Товар доступен')</code><br><br>
+<code>normalized&#95;products = [p.lower().strip() for p in products]
+if query.strip().lower() in normalized&#95;products:</code><br><br>
 [[Следующая ситуация->Списки: Ситуация 12]]
 </tw-passagedata>
     
@@ -1699,7 +1698,7 @@ print('Пароль пользователя:', password)</code><br><br>
 <tw-passagedata pid="254" name="Списки: Напутствие" tags="l3 final_bg" position="1100,5300" size="100,100">
 <div style="text-align: center; margin: 10px 0 5px 0;">
     <img src="финал.jpeg" alt="Завершение квеста" style="display: block; max-width: 100%; max-height: 35vh; object-fit: contain; border-radius: 12px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-</div>
+</div> 
 
 <div style="text-align: center; margin: 5px 0 15px 0; padding: 15px 20px; background-color: rgba(65, 105, 225, 0.1); border-radius: 10px; border-left: 4px solid #4169E1; font-size: 16px; line-height: 1.4;">
     <b>Напутствие от Софии Ивановны:</b><br><br>
