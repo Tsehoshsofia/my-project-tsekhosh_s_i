@@ -1571,6 +1571,42 @@ print(products)</code><br><br>
 [[Следующая ситуация->Списки: Ситуация 17]]
 </tw-passagedata>
 
+<tw-passagedata pid="313a" name="Списки: Ошибка 16Б" tags="l4" position="1200,6700" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 16Б->Списки: Пояснение 16Б]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="314a" name="Списки: Пояснение 16Б" tags="l15" position="300,6700" size="100,100">
+После <code>reverse()</code> список станет: 2026, 2021, 2025, 2023. Первым будет <b>2026 — Смартфон</b>, а не Ноутбук.<br><br>
+<b>Рекомендация:</b> <code>reverse()</code> не сортирует, а переворачивает. Для правильной сортировки используйте <code>sort(reverse=True)</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="315a" name="Списки: Ошибка 16В" tags="l4" position="1300,6700" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 16В->Списки: Пояснение 16В]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="316a" name="Списки: Пояснение 16В" tags="l15" position="400,6700" size="100,100">
+После <code>reverse()</code> список станет: 2026, 2021, 2025, 2023. Монитор (2023) окажется <b>последним</b>, а не первым.<br><br>
+<b>Рекомендация:</b> для сортировки по убыванию используйте <code>sort(reverse=True)</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="317a" name="Списки: Ошибка 16Г" tags="l4" position="1400,6700" size="100,100">
+(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
+[[Пояснение не верного ответа 16Г->Списки: Пояснение 16Г]]<br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
+<tw-passagedata pid="318a" name="Списки: Пояснение 16Г" tags="l15" position="500,6700" size="100,100">
+После <code>reverse()</code> список станет: 2026, 2021, 2025, 2023. Мышь (2021) окажется <b>второй</b>, а не первой.<br><br>
+<b>Рекомендация:</b> для сортировки по убыванию используйте <code>sort(reverse=True)</code>.<br><br>
+[[Начать обучение->Пользователь]]
+</tw-passagedata>
+
 <tw-passagedata pid="400" name="Списки: Ситуация 17" tags="l3 sit sit17" position="900,6800" size="100,100">
 <h2>Ситуация 17. Товар «теряется» при поиске</h2>
 Интернет-магазин электроники. Клиент вводит в поиск <b>наушники</b> с маленькой буквы. В каталоге товар записан как <b>Наушники</b>. Программа отвечает: «Товар не найден». Клиент уходит к конкуренту, магазин теряет продажу.<br><br>
@@ -1775,42 +1811,6 @@ else:
 <code>strip()</code> убирает пробелы по краям, но <b>не меняет регистр</b>. Запрос останется <code>'гост 34.601-90'</code> — с <code>'ГОСТ 34.601-90'</code> не совпадёт.<br><br>
 <b>Что произойдёт:</b> программа напечатает <b>«Документ не найден»</b>.<br><br>
 <b>Рекомендация:</b> для стандартов и аббревиатур используйте <code>upper()</code>.<br><br>
-[[Начать обучение->Пользователь]]
-</tw-passagedata>
-
-<tw-passagedata pid="313a" name="Списки: Ошибка 16Б" tags="l4" position="1200,6700" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
-[[Пояснение не верного ответа 16Б->Списки: Пояснение 16Б]]<br>
-[[Начать обучение->Пользователь]]
-</tw-passagedata>
-
-<tw-passagedata pid="314a" name="Списки: Пояснение 16Б" tags="l15" position="300,6700" size="100,100">
-После <code>reverse()</code> список станет: 2026, 2021, 2025, 2023. Первым будет <b>2026 — Смартфон</b>, а не Ноутбук.<br><br>
-<b>Рекомендация:</b> <code>reverse()</code> не сортирует, а переворачивает. Для правильной сортировки используйте <code>sort(reverse=True)</code>.<br><br>
-[[Начать обучение->Пользователь]]
-</tw-passagedata>
-
-<tw-passagedata pid="315a" name="Списки: Ошибка 16В" tags="l4" position="1300,6700" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
-[[Пояснение не верного ответа 16В->Списки: Пояснение 16В]]<br>
-[[Начать обучение->Пользователь]]
-</tw-passagedata>
-
-<tw-passagedata pid="316a" name="Списки: Пояснение 16В" tags="l15" position="400,6700" size="100,100">
-После <code>reverse()</code> список станет: 2026, 2021, 2025, 2023. Монитор (2023) окажется <b>последним</b>, а не первым.<br><br>
-<b>Рекомендация:</b> для сортировки по убыванию используйте <code>sort(reverse=True)</code>.<br><br>
-[[Начать обучение->Пользователь]]
-</tw-passagedata>
-
-<tw-passagedata pid="317a" name="Списки: Ошибка 16Г" tags="l4" position="1400,6700" size="100,100">
-(set: $wrong to $wrong + 1, $perfect to false)<span class="error-word">Не верно</span><br><br>
-[[Пояснение не верного ответа 16Г->Списки: Пояснение 16Г]]<br>
-[[Начать обучение->Пользователь]]
-</tw-passagedata>
-
-<tw-passagedata pid="318a" name="Списки: Пояснение 16Г" tags="l15" position="500,6700" size="100,100">
-После <code>reverse()</code> список станет: 2026, 2021, 2025, 2023. Мышь (2021) окажется <b>второй</b>, а не первой.<br><br>
-<b>Рекомендация:</b> для сортировки по убыванию используйте <code>sort(reverse=True)</code>.<br><br>
 [[Начать обучение->Пользователь]]
 </tw-passagedata>
 
