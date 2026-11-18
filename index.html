@@ -86,7 +86,7 @@ tw-story[tags~="l47"], tw-story[tags~="l58"], tw-story[tags~="l63"] {
 }
 
 /* Конкретные ситуации */
-tw-story[tags~="sit1"] { background-image: url("добавить_авто.jpeg") !important; }
+tw-story[tags~="sit1"] { background-image: none !important; }
 tw-story[tags~="sit2"] { background-image: url("добавить_авто.jpeg") !important; }
 tw-story[tags~="sit3"] { background-image: url("салон_красоты.jpeg") !important; }
 tw-story[tags~="sit5"] { background-image: url("пылесос.jpeg") !important; }
@@ -711,7 +711,40 @@ tw-passage[tags~="l1"] tw-link:hover {
     background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="l1" color="green"></tw-tag><tw-tag name="l2" color="purple"></tw-tag><tw-tag name="l3" color="green"></tw-tag><tw-tag name="l4" color="green"></tw-tag><tw-tag name="l15" color="purple"></tw-tag>
+</style><style>
+/* Стили для видео-фона */
+#bg-video {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    object-fit: cover;
+    z-index: -1; /* Прячем за карточки */
+    pointer-events: none; /* Клики проходят сквозь видео */
+    display: none; /* Изначально скрыто */
+}
+</style>
+
+<video id="bg-video" autoplay muted loop playsinline>
+    <!-- Ссылка на твой файл из GitHub -->
+    <source src="https://raw.githubusercontent.com/Tsehoshsofia/my-project-tsekhosh_s_i/main/добавить_товар.mp4" type="video/mp4">
+</video>
+
+<script>
+$(document).on(':passagedisplay', function () {
+    var story = document.querySelector('tw-story');
+    var video = document.getElementById('bg-video');
+    
+    // Если у пассажа есть тег "sit1" (Покупка авто) — показываем видео
+    if (story && story.getAttribute('tags') && story.getAttribute('tags').indexOf('sit1') !== -1) {
+        video.style.display = 'block';
+        video.play().catch(function(e) { console.log("Видео заблокировано:", e); });
+    } else {
+        // На всех остальных страницах видео скрываем
+        video.style.display = 'none';
+        video.pause();
+    }
+});
+</script><tw-tag name="l1" color="green"></tw-tag><tw-tag name="l2" color="purple"></tw-tag><tw-tag name="l3" color="green"></tw-tag><tw-tag name="l4" color="green"></tw-tag><tw-tag name="l15" color="purple"></tw-tag>
 <tw-passagedata pid="1" name="Пользователь" tags="l1" position="800,100" size="100,100">(set: $history to (a:), $correct to 0, $wrong to 0, $perfect to true, $attemptHistory to (a:), $resetFlag to true, $attempts to 0)<div class="cloud-text">Здравствуйте. Меня зовут София Ивановна, я преподаватель дисциплины "Основы программирования". В приложении доставки произошли сбои: клиенты не находят товары, получают не те заказы и теряют корзины. Ваша задача - найти ошибки в коде и исправить их</div>
 [[Списки->Списки: Начало]]</tw-passagedata>
 
