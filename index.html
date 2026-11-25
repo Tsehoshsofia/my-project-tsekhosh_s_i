@@ -610,40 +610,37 @@ tw-passage[tags~="l1"] {
 }
 /* --- ОБЛАКО С ТЕКСТОМ --- */
 .cloud-text {
-    pointer-events: auto !important; 
+    pointer-events: auto !important;
     position: absolute !important;
-    
-    /* Сдвигаем само облако правее и чуть выше */
-    top: 4vh !important;      
-    right: 2vw !important;    
-    
-    width: 85vw !important;
-    max-width: 420px !important; 
-    min-height: 180px !important; 
-    
-    /* Визуал облака: прямоугольник с мягкими углами */
+
+    /* Поднимаем и уводим облако правее, чтобы левый край не касался лица */
+    top: 2vh !important;
+    right: 0 !important;
+
+    width: 80vw !important;
+    max-width: 400px !important;
+    min-height: 180px !important;
+
     background-color: rgba(255, 255, 255, 0.96) !important;
-    border-radius: 30px !important; 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important; 
-    
-    /* Текст внутри */
-    padding: 30px 35px !important; 
-    color: #1a1a1a !important; 
+    border-radius: 30px !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+
+    padding: 30px 35px !important;
+    color: #1a1a1a !important;
     font-size: 18px !important;
     line-height: 1.45 !important;
-    text-align: center !important; 
+    text-align: center !important;
     font-family: "Times New Roman", Times, serif !important;
     z-index: 11 !important;
 }
 
-/* Главный хвостик (первый кружок) */
+/* Главный хвостик — прячем ПОД нижний край, а не сбоку */
 .cloud-text::after {
     content: "" !important;
     position: absolute !important;
 
-    /* Прячем под нижний край облака, ближе к левому углу */
-    bottom: -20px !important;
-    left: 18px !important;
+    bottom: -16px !important;   /* кружок выглядывает только снизу */
+    left: 20px !important;      /* внутри облака, а не за левым краем */
 
     width: 25px !important;
     height: 25px !important;
@@ -653,14 +650,13 @@ tw-passage[tags~="l1"] {
     z-index: -1 !important;
 }
 
-/* Маленький хвостик (второй кружок) */
+/* Маленький хвостик — чуть ниже и левее большого */
 .cloud-text::before {
     content: "" !important;
     position: absolute !important;
 
-    /* Ниже и левее большого — получится «улывающая» цепочка к персонажу */
-    bottom: -38px !important;
-    left: 2px !important;
+    bottom: -30px !important;
+    left: 4px !important;
 
     width: 14px !important;
     height: 14px !important;
